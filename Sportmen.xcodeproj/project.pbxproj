@@ -14,6 +14,8 @@
 		66CF92502B74B2E80000C207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66CF924F2B74B2E80000C207 /* Assets.xcassets */; };
 		66CF92532B74B2E80000C207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CF92512B74B2E80000C207 /* LaunchScreen.storyboard */; };
 		66CF92662B750E8E0000C207 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF92652B750E8E0000C207 /* NewsController.swift */; };
+		66CF926D2B75FEDE0000C207 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF926C2B75FEDE0000C207 /* News.swift */; };
+		66CF926F2B7606F50000C207 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF926E2B7606F50000C207 /* Webservice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		66CF92522B74B2E80000C207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66CF92542B74B2E80000C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66CF92652B750E8E0000C207 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		66CF926C2B75FEDE0000C207 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		66CF926E2B7606F50000C207 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		66CF92692B75F7030000C207 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				66CF926C2B75FEDE0000C207 /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 		66CF926A2B75FD1A0000C207 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				66CF926E2B7606F50000C207 /* Webservice.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 			files = (
 				66CF92662B750E8E0000C207 /* NewsController.swift in Sources */,
 				66CF924B2B74B2E60000C207 /* ViewController.swift in Sources */,
+				66CF926F2B7606F50000C207 /* Webservice.swift in Sources */,
 				66CF92472B74B2E60000C207 /* AppDelegate.swift in Sources */,
+				66CF926D2B75FEDE0000C207 /* News.swift in Sources */,
 				66CF92492B74B2E60000C207 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
