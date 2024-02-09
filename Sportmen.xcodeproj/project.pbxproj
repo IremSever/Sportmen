@@ -58,16 +58,48 @@
 		66CF92452B74B2E60000C207 /* Sportmen */ = {
 			isa = PBXGroup;
 			children = (
-				66CF92462B74B2E60000C207 /* AppDelegate.swift */,
-				66CF92652B750E8E0000C207 /* NewsController.swift */,
-				66CF92482B74B2E60000C207 /* SceneDelegate.swift */,
-				66CF924A2B74B2E60000C207 /* ViewController.swift */,
+				66CF926A2B75FD1A0000C207 /* Service */,
+				66CF92692B75F7030000C207 /* Model */,
+				66CF92682B75F6FA0000C207 /* ViewModel */,
+				66CF92672B75F6EF0000C207 /* View */,
 				66CF924C2B74B2E60000C207 /* Main.storyboard */,
 				66CF924F2B74B2E80000C207 /* Assets.xcassets */,
 				66CF92512B74B2E80000C207 /* LaunchScreen.storyboard */,
 				66CF92542B74B2E80000C207 /* Info.plist */,
 			);
 			path = Sportmen;
+			sourceTree = "<group>";
+		};
+		66CF92672B75F6EF0000C207 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66CF92462B74B2E60000C207 /* AppDelegate.swift */,
+				66CF92482B74B2E60000C207 /* SceneDelegate.swift */,
+				66CF924A2B74B2E60000C207 /* ViewController.swift */,
+				66CF92652B750E8E0000C207 /* NewsController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66CF92682B75F6FA0000C207 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66CF92692B75F7030000C207 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66CF926A2B75FD1A0000C207 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
