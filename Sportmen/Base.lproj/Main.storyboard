@@ -63,17 +63,32 @@
             </objects>
             <point key="canvasLocation" x="1720" y="-794"/>
         </scene>
-        <!--News-->
+        <!--NewsScene-->
         <scene sceneID="j3u-UR-xH6">
             <objects>
-                <viewController id="fx5-gH-vus" sceneMemberID="viewController">
+                <viewController title="NewsScene" id="fx5-gH-vus" customClass="NewsController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="taa-wP-ROj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-G8-kmC">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="shb-NH-0cB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="zpo-G8-kmC" secondAttribute="trailing" id="d8L-GY-xLR"/>
+                            <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" id="fFj-po-GUV"/>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" id="fiI-0A-slL"/>
+                            <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="yRE-SA-Gdo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="ppc-dR-Tzx"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="zpo-G8-kmC" id="59U-8N-ThO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ab4-Cb-aKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
