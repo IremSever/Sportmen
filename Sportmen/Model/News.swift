@@ -5,23 +5,21 @@
 //  Created by IREM SEVER on 9.02.2024.
 //
 
-import Foundation
-
 struct News: Codable {
-    let meta: Meta
-    let data: [Datum]
+    let meta: Meta?
+    let data: [Datum]?
 }
 
 struct Datum: Codable {
-    let id, reportID: Int
-    let reportUniqueID, title, spot: String
-    let url: String
-    let publishedDate, modifiedDate: String
-    let image: String
-    let category: Category
-    let altCategory: Category?
-    let keywordList: [Category]
-    let source: Source
+    let id, reportID: Int?
+    let reportUniqueID, title, spot: String?
+    let url: String?
+    let publishedDate, modifiedDate: String?
+    let image: String?
+    let category: Category?
+    let altCategory: Category??
+    let keywordList: [Category]?
+    let source: Source?
 
     enum CodingKeys: String, CodingKey {
         case id = "Id"

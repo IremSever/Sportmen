@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1720" y="-794"/>
         </scene>
-        <!--NewsScene-->
+        <!--News-->
         <scene sceneID="j3u-UR-xH6">
             <objects>
-                <viewController title="NewsScene" id="fx5-gH-vus" customClass="NewsController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="News" id="fx5-gH-vus" customClass="NewsController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="taa-wP-ROj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="ppc-dR-Tzx"/>
                     <connections>
-                        <outlet property="newsTableView" destination="zpo-G8-kmC" id="59U-8N-ThO"/>
+                        <outlet property="newsTableView" destination="zpo-G8-kmC" id="ZH5-lR-X3s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ab4-Cb-aKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

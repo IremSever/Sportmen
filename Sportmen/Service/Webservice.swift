@@ -13,14 +13,13 @@ enum NewsError: Error {
 }
 
 class Webservice {
-    func downloadNews(url: URL, completion: @escaping (Result<[News], NewsError>) -> ()){
+    func downloadNews(url: URL, completion: @escaping (Result<News, NewsError>) -> ()){
         URLSession.shared.dataTask(with: url){ data, response, error in
-            
-            if let error = error {
+            if error != nil {
                 completion(.failure(.serverError))
                 return
             } else if let data = data {
-                let newsList = try? JSONDecoder().decode([News].self, from: data)
+                let newsList = try? JSONDecoder().decode(News.self, from: data)
                 if let newsList = newsList {
                     completion(.success(newsList))
                 } else {
