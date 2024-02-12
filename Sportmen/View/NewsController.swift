@@ -7,16 +7,19 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
+import Combine
 
 class NewsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var newsTableView: UITableView!
     let newsVM = NewsViewModel()
-    let disposeBag = DisposeBag()
+    var cancellables = Set<AnyCancellable>()
     
-    var newsList : [Datum] = []
+    var newsList: [Datum] = [] {
+        didSet {
+            newsTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,24 +29,21 @@ class NewsController: UIViewController, UITableViewDelegate, UITableViewDataSour
         newsVM.requestData()
     }
     
-    private func setupBindings(){
+    private func setupBindings() {
         // Error Message
-        newsVM
-            .error
-            .observe(on: MainScheduler.asyncInstance)
-            .subscribe { errorString in
+        newsVM.error
+            .receive(on: DispatchQueue.main)
+            .sink { errorString in
                 print(errorString)
             }
-            .disposed(by: disposeBag)
+            .store(in: &cancellables)
         
-        newsVM
-            .news
-            .observe(on: MainScheduler.asyncInstance)
-            .subscribe { news in
-                self.newsList = news.data ?? []
-                self.newsTableView.reloadData()
+        newsVM.news
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] news in
+                self?.newsList = news.data ?? []
             }
-            .disposed(by: disposeBag)
+            .store(in: &cancellables)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,10 +54,12 @@ class NewsController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         
         var content = cell.defaultContentConfiguration()
-        content.text =  newsList[indexPath.row].image ?? ""
+        content.text = newsList[indexPath.row].image ?? ""
         content.secondaryText = newsList[indexPath.row].title ?? ""
         content.secondaryText = newsList[indexPath.row].spot ?? ""
         cell.contentConfiguration = content
+        
         return cell
     }
 }
+
