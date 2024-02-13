@@ -49,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		666F83D82B7B42CC007DF20C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				66CF92462B74B2E60000C207 /* AppDelegate.swift */,
+				66CF92482B74B2E60000C207 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		66CF923A2B74B2E60000C207 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +92,7 @@
 		66CF92672B75F6EF0000C207 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				66CF92462B74B2E60000C207 /* AppDelegate.swift */,
-				66CF92482B74B2E60000C207 /* SceneDelegate.swift */,
+				666F83D82B7B42CC007DF20C /* Delegate */,
 				66CF924A2B74B2E60000C207 /* ViewController.swift */,
 				66CF92652B750E8E0000C207 /* NewsController.swift */,
 			);
