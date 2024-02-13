@@ -85,11 +85,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainmenu" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-e9-dJk">
+                                <rect key="frame" x="0.0" y="60" width="393" height="51"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="shb-NH-0cB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jl1-e9-dJk" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="HAF-eB-qzX"/>
+                            <constraint firstItem="jl1-e9-dJk" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" constant="60" id="HeZ-8S-BBu"/>
                             <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="zpo-G8-kmC" secondAttribute="trailing" id="d8L-GY-xLR"/>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="jl1-e9-dJk" secondAttribute="trailing" id="dwU-Fu-gkF"/>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" id="fFj-po-GUV"/>
                             <constraint firstItem="shb-NH-0cB" firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" id="fiI-0A-slL"/>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="yRE-SA-Gdo"/>
@@ -177,6 +183,7 @@
     </scenes>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="icon_mainmenu" width="170" height="51"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="photo.circle" catalog="system" width="128" height="123"/>
         <image name="play" catalog="system" width="117" height="128"/>
