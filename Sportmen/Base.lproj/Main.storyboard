@@ -71,16 +71,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-G8-kmC">
-                                <rect key="frame" x="0.0" y="168" width="393" height="635"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-G8-kmC">
+                                <rect key="frame" x="0.0" y="119" width="393" height="684"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="460" id="i1U-Xr-bEJ">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="460"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="600" id="i1U-Xr-bEJ">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i1U-Xr-bEJ" id="bkK-9P-0YK">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="460"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="600"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-wf-uqS">
+                                                    <rect key="frame" x="16" y="11" width="360" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AzL-3f-PUe">
+                                                    <rect key="frame" x="16" y="238" width="120" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DT2-Nx-tXB">
+                                                    <rect key="frame" x="16" y="489" width="120" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bE-ox-4ah">
+                                                    <rect key="frame" x="16" y="363" width="120" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,13 +110,13 @@
                         <viewLayoutGuide key="safeArea" id="shb-NH-0cB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="4iD-cZ-XOa"/>
                             <constraint firstItem="jl1-e9-dJk" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="HAF-eB-qzX"/>
                             <constraint firstItem="jl1-e9-dJk" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" constant="60" id="HeZ-8S-BBu"/>
-                            <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="zpo-G8-kmC" secondAttribute="trailing" id="d8L-GY-xLR"/>
                             <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="jl1-e9-dJk" secondAttribute="trailing" id="dwU-Fu-gkF"/>
-                            <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" id="fFj-po-GUV"/>
-                            <constraint firstItem="shb-NH-0cB" firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" id="fiI-0A-slL"/>
-                            <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="yRE-SA-Gdo"/>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="trailing" secondItem="zpo-G8-kmC" secondAttribute="trailing" id="hah-wl-8em"/>
+                            <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="jl1-e9-dJk" secondAttribute="bottom" constant="8" id="kTd-qF-QDc"/>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" id="ygX-5g-yAA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="ppc-dR-Tzx"/>
