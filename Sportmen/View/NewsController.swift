@@ -27,6 +27,8 @@ class NewsController: UIViewController, UITableViewDelegate, UITableViewDataSour
         newsTableView.dataSource = self
         setupBindings()
         newsVM.requestData()
+        newsTableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "cell1")
+        newsTableView.register(NewsTableViewCell2.self, forCellReuseIdentifier: "cell2")
     }
 
     private func setupBindings() {
@@ -51,62 +53,25 @@ class NewsController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = NewsTableViewCell(style: .default, reuseIdentifier: "NewsCell")
         let news = newsList[indexPath.row]
-        cell.configure(with: news)
-        return cell
+        if indexPath.row % 2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! NewsTableViewCell
+            cell.configure(with: news)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! NewsTableViewCell2
+            cell.configure(with: news)
+            return cell
+        }
     }
 }
 
 class NewsTableViewCell: UITableViewCell {
-    private let newsImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
+    @IBOutlet weak var img_cell1: UIImageView?
     
-    private let spotLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(newsImageView)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(spotLabel)
-        
-        NSLayoutConstraint.activate([
-            newsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            newsImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            newsImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            newsImageView.widthAnchor.constraint(equalToConstant: 100),
-            
-            titleLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor, constant: 8),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            spotLabel.leadingAnchor.constraint(equalTo: newsImageView.trailingAnchor, constant: 8),
-            spotLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            spotLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @IBOutlet weak var source_cell1: UILabel?
+    @IBOutlet weak var title_cell1: UILabel?
     
     func configure(with news: Datum) {
         if let imageUrlString = news.image, let imageUrl = URL(string: imageUrlString) {
@@ -117,23 +82,77 @@ class NewsTableViewCell: UITableViewCell {
                 }
                 DispatchQueue.main.async {
                     if let image = UIImage(data: data) {
-                        self.newsImageView.image = image
+                        self.img_cell1?.image = image
                     }
                 }
             }.resume()
         }
         
-        titleLabel.text = news.title
+        if let titleCell = title_cell1 {
+            titleCell.text = news.title
+        }
         
+        if let source = news.source {
+            source_cell1?.text = source.name.rawValue
+        } else {
+            source_cell1!.text = "Unknown Source"
+        }
+        
+    }
+}
+
+class NewsTableViewCell2: UITableViewCell {
+    
+    @IBOutlet weak var img_cell2: UIImageView?
+    
+    @IBOutlet weak var spot_cell2: UILabel?
+    
+    @IBOutlet weak var publishedDate_cell2: UILabel?
+    
+    @IBOutlet weak var title_cell2: UILabel?
+    
+    @IBOutlet weak var source_cell2: UILabel?
+    
+    
+    func configure(with news: Datum) {
+        if let imageUrlString = news.image, let imageUrl = URL(string: imageUrlString) {
+            URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("Error downloading image: \(error?.localizedDescription ?? "Unknown error")")
+                    return
+                }
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: data) {
+                        self.img_cell2?.image = image
+                    }
+                }
+            }.resume()
+        }
+        if let titleCell = title_cell2 {
+            titleCell.text = news.title
+        }
+  
         if let spotText = news.spot {
             let spotLines = spotText.components(separatedBy: .newlines)
             if !spotLines.isEmpty {
-                spotLabel.text = spotLines[0]
+                spot_cell2?.text = spotLines[0]
             } else {
-                spotLabel.text = spotText
+                spot_cell2?.text = spotText
             }
         } else {
-            spotLabel.text = nil
+            spot_cell2?.text = nil
+        }
+        
+        if let date = news.publishedDate {
+            publishedDate_cell2?.text = date
+        } else {
+            publishedDate_cell2!.text = nil
+        }
+        
+        if let source = news.source {
+            source_cell2?.text = source.name.rawValue
+        } else {
+            source_cell2!.text = "Unknown Source"
         }
     }
 }
