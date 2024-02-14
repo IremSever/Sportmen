@@ -6,31 +6,29 @@
 //
 
 import Foundation
-import Combine
 
 class NewsViewModel {
+    private var webService = Webservice()
+    private var news = [News]()
     
-    let news = PassthroughSubject<News, Never>()
-    let error = PassthroughSubject<String, Never>()
-    let loading = PassthroughSubject<Bool, Never>()
-    
-    func requestData() {
-        self.loading.send(true)
-        
-        let url = URL(string: "https://api.tmgrup.com.tr/aggregator/contents?pagetype=0&app=2")!
-        Webservice().downloadNews(url: url) { result in
-            self.loading.send(false)
+    func fetchNewsData(completion: @escaping() -> ()) {
+        webService.getNewsData{ [weak self] (result) in
             switch result {
-            case .success(let news):
-                self.news.send(news)
+            case .success(let listOf):
+                self?.news = listOf.news
+                completion()
             case .failure(let error):
-                switch error {
-                case .parsingError:
-                    self.error.send("Parsing Error")
-                case .serverError:
-                    self.error.send("Server Error")
-                }
+                print("Error proccessing json data: \(error)")
             }
         }
+    }
+    func numberOfRowsInSection(section: Int) -> Int {
+        if news.count != 0 {
+            return news.count
+        }
+        return 0
+    }
+    func cellForRowAt(indexPath: IndexPath) -> News {
+        return news[indexPath.row]
     }
 }

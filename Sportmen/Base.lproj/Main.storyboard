@@ -86,7 +86,7 @@
                                                     <rect key="frame" x="16" y="11" width="361" height="200"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbg-Dv-Pkr">
-                                                    <rect key="frame" x="25" y="181" width="343" height="21"/>
+                                                    <rect key="frame" x="175" y="181" width="43.333333333333343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="sCm-qY-4Kd"/>
                                                     </constraints>
@@ -95,7 +95,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-lG-gPq">
-                                                    <rect key="frame" x="25" y="159.66666666666666" width="343" height="13.333333333333343"/>
+                                                    <rect key="frame" x="175" y="159.66666666666666" width="43.333333333333343" height="13.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGray4Color"/>
                                                     <nil key="highlightedColor"/>
@@ -106,9 +106,9 @@
                                                 <constraint firstItem="EsP-wf-uqS" firstAttribute="top" secondItem="bkK-9P-0YK" secondAttribute="top" constant="11" id="6Mw-Ws-CT0" customClass="NewsTableViewCell"/>
                                                 <constraint firstItem="EsP-wf-uqS" firstAttribute="centerX" secondItem="cv3-lG-gPq" secondAttribute="centerX" id="7Qg-w4-bB9" customClass="NewsTableViewCell"/>
                                                 <constraint firstItem="EsP-wf-uqS" firstAttribute="centerX" secondItem="bkK-9P-0YK" secondAttribute="centerX" id="7s6-B7-iLO" customClass="NewsTableViewCell"/>
-                                                <constraint firstAttribute="trailing" secondItem="Lbg-Dv-Pkr" secondAttribute="trailing" constant="25" id="B31-NF-Ovn" customClass="NewsTableViewCell"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lbg-Dv-Pkr" secondAttribute="trailing" id="B31-NF-Ovn" customClass="NewsTableViewCell"/>
                                                 <constraint firstItem="EsP-wf-uqS" firstAttribute="leading" secondItem="bkK-9P-0YK" secondAttribute="leadingMargin" constant="-4" id="Eud-CV-PBr" customClass="NewsTableViewCell"/>
-                                                <constraint firstItem="Lbg-Dv-Pkr" firstAttribute="leading" secondItem="bkK-9P-0YK" secondAttribute="leadingMargin" constant="5" id="JZe-mL-sH0" customClass="NewsTableViewCell"/>
+                                                <constraint firstItem="Lbg-Dv-Pkr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bkK-9P-0YK" secondAttribute="leadingMargin" id="JZe-mL-sH0" customClass="NewsTableViewCell"/>
                                                 <constraint firstItem="Lbg-Dv-Pkr" firstAttribute="top" secondItem="cv3-lG-gPq" secondAttribute="bottom" constant="8" symbolic="YES" id="dWD-FL-coz" customClass="NewsTableViewCell"/>
                                                 <constraint firstItem="EsP-wf-uqS" firstAttribute="centerX" secondItem="Lbg-Dv-Pkr" secondAttribute="centerX" id="eOX-3u-GE9" customClass="NewsTableViewCell"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="EsP-wf-uqS" secondAttribute="bottom" constant="-9" id="fgl-7P-AP4" customClass="NewsTableViewCell"/>
@@ -116,12 +116,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="img_cell1" destination="EsP-wf-uqS" id="aVY-TM-cX6"/>
-                                            <outlet property="source_cell1" destination="cv3-lG-gPq" id="hUZ-5k-Dgo"/>
-                                            <outlet property="title_cell1" destination="Lbg-Dv-Pkr" id="ecg-CP-2qw"/>
+                                            <outlet property="newsImgCell1" destination="EsP-wf-uqS" id="hee-gT-zf6"/>
+                                            <outlet property="newsSourceCell1" destination="cv3-lG-gPq" id="dSg-s9-stI"/>
+                                            <outlet property="newsTtleCell1" destination="Lbg-Dv-Pkr" id="Taq-63-rcL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="128" id="hgv-Qw-zJo" customClass="NewsTableViewCell2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="128" id="hgv-Qw-zJo">
                                         <rect key="frame" x="0.0" y="263" width="393" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hgv-Qw-zJo" id="dw5-ah-SEy">
@@ -183,13 +183,6 @@
                                                 <constraint firstItem="Xp5-Rr-iqe" firstAttribute="leading" secondItem="dw5-ah-SEy" secondAttribute="leading" constant="20" symbolic="YES" id="wgi-yW-6Q9"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="img_cell2" destination="Xp5-Rr-iqe" id="IjM-t4-xwZ"/>
-                                            <outlet property="publishedDate_cell2" destination="lyt-GK-Rab" id="UeG-aj-9Hn"/>
-                                            <outlet property="source_cell2" destination="tO9-Iz-cyG" id="grz-Vf-0u3"/>
-                                            <outlet property="spot_cell2" destination="0ek-1E-97c" id="Oso-Mi-ytG"/>
-                                            <outlet property="title_cell2" destination="jcA-rO-442" id="f3Y-6k-1hQ"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -7,25 +7,47 @@
 
 import Foundation
 
-enum NewsError: Error {
-    case serverError
-    case parsingError
-}
-
 class Webservice {
-    func downloadNews(url: URL, completion: @escaping (Result<News, NewsError>) -> ()){
-        URLSession.shared.dataTask(with: url){ data, response, error in
-            if error != nil {
-                completion(.failure(.serverError))
+    private var dataTask: URLSessionDataTask?
+    
+    func getNewsData(completion: @escaping (Result<NewsData, Error>) -> Void) {
+        
+        let newsURL = "https://api.tmgrup.com.tr/aggregator/contents?pagetype=0&app=2"
+        guard let url = URL(string: newsURL) else {return}
+        
+        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                print("DataTask error: \(error.localizedDescription)")
                 return
-            } else if let data = data {
-                let newsList = try? JSONDecoder().decode(News.self, from: data)
-                if let newsList = newsList {
-                    completion(.success(newsList))
-                } else {
-                    completion(.failure(.parsingError))
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                print("Empty Response")
+                return
+            }
+            print("Response status code: \(response.statusCode)")
+            
+            guard let data = data else {
+                print("Empty Data")
+                return
+            }
+            
+            do{
+                //parse the data
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(NewsData.self, from: data)
+                
+                //back to the main thread
+                DispatchQueue.main.async {
+                    completion(.success(jsonData))
                 }
             }
-        }.resume()
+            catch let error {
+                completion(.failure(error))
+                
+            }
+        }
+        dataTask?.resume()
     }
 }
