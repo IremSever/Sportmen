@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 import Combine
 
-class NewsController: UIViewController {
+class NewsViewController: UIViewController {
+    
     
     @IBOutlet weak var newsTableView: UITableView!
     let newsViewModel = NewsViewModel()
@@ -21,14 +22,14 @@ class NewsController: UIViewController {
     
     private func loadNewsData() {
         newsViewModel.fetchNewsData { [weak self] in
-            self?.newsTableView.dataSource = self
+            self?.newsTableView.dataSource = self!
             self?.newsTableView.reloadData()
         }
     }
 }
 
 // MARK: - UITableViewDataSource Extension
-extension NewsController: UITableViewDataSource {
+extension NewsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsViewModel.numberOfRowsInSection(section: section)
