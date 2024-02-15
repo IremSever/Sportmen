@@ -6,32 +6,6 @@
 //
 import Foundation
 
-struct NewsData: Decodable {
-    let news: [News]
-    private enum CodingKeys: String, CodingKey {
-        case news
-    }
-}
-
-struct News: Decodable{
-    let id /*, reportID*/: Int?
-    let /*reportUniqueID,*/ title, spot: String?
-    /*let url: String?*/
-    let publishedDate /*, modifiedDate*/: String?
-    let image: String?
-    /*let category: String?
-    let altCategory: String??*/
-    let keywordList: [String]?
-    let source: String?
-    
-    private enum CodingsKeys: String, CodingKey {
-        case id, title = "Title", spot = "Spot", image = "Image",
-             publishedDate = "PublishedDate", keywordList = "KeywordList",source = "Source"
-    }
-}
-
-/*import Foundation
- 
  // MARK: - Empty
  struct Empty: Codable {
      let meta: Meta
@@ -40,15 +14,15 @@ struct News: Decodable{
 
  // MARK: - Datum
  struct Datum: Codable {
-     let id, reportID: Int
-     let reportUniqueID, title, spot: String
-     let url: String
-     let publishedDate, modifiedDate: String
-     let image: String
-     let category: Category
+     let id, reportID: Int?
+     let reportUniqueID, title, spot: String?
+     let url: String?
+     let publishedDate, modifiedDate: String?
+     let image: String?
+     let category: Category?
      let altCategory: Category?
-     let keywordList: [Category]
-     let source: Source
+     let keywordList: [Category]?
+     let source: Source?
 
      enum CodingKeys: String, CodingKey {
          case id = "Id"
@@ -149,4 +123,4 @@ struct News: Decodable{
          case message, description, brand
      }
  }
-*/
+

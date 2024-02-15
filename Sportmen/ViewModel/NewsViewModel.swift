@@ -9,26 +9,25 @@ import Foundation
 
 class NewsViewModel {
     private var webService = Webservice()
-    private var news = [News]()
+    private var news = [Datum]()
     
     func fetchNewsData(completion: @escaping() -> ()) {
-        webService.getNewsData{ [weak self] (result) in
+        webService.getNewsData { [weak self] result in
             switch result {
-            case .success(let listOf):
-                self?.news = listOf.news
+            case .success(let newsData):
+                self?.news = newsData.data
                 completion()
             case .failure(let error):
-                print("Error proccessing json data: \(error)")
+                print("Error processing json data: \(error)")
             }
         }
     }
+    
     func numberOfRowsInSection(section: Int) -> Int {
-        if news.count != 0 {
-            return news.count
-        }
-        return 0
+        return news.count
     }
-    func cellForRowAt(indexPath: IndexPath) -> News {
+    
+    func cellForRowAt(indexPath: IndexPath) -> Datum {
         return news[indexPath.row]
     }
 }
