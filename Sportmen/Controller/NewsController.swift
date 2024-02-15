@@ -37,13 +37,15 @@ extension NewsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let news = newsViewModel.cellForRowAt(indexPath: indexPath)
         
-        if indexPath.row == 0 {
+        if indexPath.row % 4 == 0 {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! NewsTableViewCell
             cell.setCell1WithValuesOf(news)
+            print("cell1")
             return cell
         } else {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! NewsTableViewCell
             cell.setCell2WithValuesOf(news)
+            print("cell2")
             return cell
         }
     }
