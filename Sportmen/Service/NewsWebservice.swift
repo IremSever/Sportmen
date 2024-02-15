@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Webservice {
-    func getNewsData(completion: @escaping (Result<Empty, Error>) -> Void) {
+class NewsWebservice {
+    func getNewsData(completion: @escaping (Result<News, Error>) -> Void) {
             let newsURL = "https://api.tmgrup.com.tr/aggregator/contents?pagetype=0&app=2"
             guard let url = URL(string: newsURL) else { return }
 
@@ -20,19 +20,19 @@ class Webservice {
                 }
 
                 guard let response = response as? HTTPURLResponse else {
-                    print("Empty Response")
+                    print("News Response")
                     return
                 }
                 print("Response status code: \(response.statusCode)")
 
                 guard let data = data else {
-                    print("Empty Data")
+                    print("News Data")
                     return
                 }
 
                 do {
                     let decoder = JSONDecoder()
-                    let jsonData = try decoder.decode(Empty.self, from: data)
+                    let jsonData = try decoder.decode(News.self, from: data)
                     DispatchQueue.main.async {
                         completion(.success(jsonData))
                     }

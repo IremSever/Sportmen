@@ -15,10 +15,14 @@
 		66CF92532B74B2E80000C207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CF92512B74B2E80000C207 /* LaunchScreen.storyboard */; };
 		66CF92662B750E8E0000C207 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF92652B750E8E0000C207 /* NewsViewController.swift */; };
 		66CF926D2B75FEDE0000C207 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF926C2B75FEDE0000C207 /* News.swift */; };
-		66CF926F2B7606F50000C207 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF926E2B7606F50000C207 /* Webservice.swift */; };
+		66CF926F2B7606F50000C207 /* NewsWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF926E2B7606F50000C207 /* NewsWebservice.swift */; };
 		66CF92712B763B630000C207 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CF92702B763B630000C207 /* NewsViewModel.swift */; };
 		66FF4B022B7CAADB00C1DBED /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B012B7CAADB00C1DBED /* NewsTableViewCell.swift */; };
 		66FF4B052B7E1DED00C1DBED /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B042B7E1DED00C1DBED /* VideosViewController.swift */; };
+		66FF4B0F2B7E2C6600C1DBED /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B0E2B7E2C6600C1DBED /* Videos.swift */; };
+		66FF4B112B7E3A4200C1DBED /* VideosWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B102B7E3A4200C1DBED /* VideosWebService.swift */; };
+		66FF4B132B7E3B1200C1DBED /* VideosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B122B7E3B1200C1DBED /* VideosViewModel.swift */; };
+		66FF4B152B7E46C300C1DBED /* VideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF4B142B7E46C300C1DBED /* VideosTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +36,14 @@
 		66CF92542B74B2E80000C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66CF92652B750E8E0000C207 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		66CF926C2B75FEDE0000C207 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		66CF926E2B7606F50000C207 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		66CF926E2B7606F50000C207 /* NewsWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebservice.swift; sourceTree = "<group>"; };
 		66CF92702B763B630000C207 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		66FF4B012B7CAADB00C1DBED /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		66FF4B042B7E1DED00C1DBED /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		66FF4B0E2B7E2C6600C1DBED /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		66FF4B102B7E3A4200C1DBED /* VideosWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosWebService.swift; sourceTree = "<group>"; };
+		66FF4B122B7E3B1200C1DBED /* VideosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewModel.swift; sourceTree = "<group>"; };
+		66FF4B142B7E46C300C1DBED /* VideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 			children = (
 				666F83D82B7B42CC007DF20C /* Delegate */,
 				66FF4B012B7CAADB00C1DBED /* NewsTableViewCell.swift */,
+				66FF4B142B7E46C300C1DBED /* VideosTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				66CF92702B763B630000C207 /* NewsViewModel.swift */,
+				66FF4B122B7E3B1200C1DBED /* VideosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				66CF926C2B75FEDE0000C207 /* News.swift */,
+				66FF4B0E2B7E2C6600C1DBED /* Videos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,7 +129,8 @@
 		66CF926A2B75FD1A0000C207 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				66CF926E2B7606F50000C207 /* Webservice.swift */,
+				66CF926E2B7606F50000C207 /* NewsWebservice.swift */,
+				66FF4B102B7E3A4200C1DBED /* VideosWebService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -210,9 +222,13 @@
 			files = (
 				66FF4B052B7E1DED00C1DBED /* VideosViewController.swift in Sources */,
 				66CF92662B750E8E0000C207 /* NewsViewController.swift in Sources */,
+				66FF4B132B7E3B1200C1DBED /* VideosViewModel.swift in Sources */,
+				66FF4B112B7E3A4200C1DBED /* VideosWebService.swift in Sources */,
 				66CF924B2B74B2E60000C207 /* ViewController.swift in Sources */,
+				66FF4B152B7E46C300C1DBED /* VideosTableViewCell.swift in Sources */,
+				66FF4B0F2B7E2C6600C1DBED /* Videos.swift in Sources */,
 				66FF4B022B7CAADB00C1DBED /* NewsTableViewCell.swift in Sources */,
-				66CF926F2B7606F50000C207 /* Webservice.swift in Sources */,
+				66CF926F2B7606F50000C207 /* NewsWebservice.swift in Sources */,
 				66CF92472B74B2E60000C207 /* AppDelegate.swift in Sources */,
 				66CF92712B763B630000C207 /* NewsViewModel.swift in Sources */,
 				66CF926D2B75FEDE0000C207 /* News.swift in Sources */,
@@ -366,8 +382,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sportmen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,6 +400,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iremsever.Sportmen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -397,8 +416,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sportmen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -413,6 +434,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iremsever.Sportmen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

@@ -49,19 +49,47 @@
         <!--Videos-->
         <scene sceneID="eUd-IB-rGe">
             <objects>
-                <viewController id="swM-po-DM5" sceneMemberID="viewController">
+                <viewController id="swM-po-DM5" customClass="VideosViewController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HkX-w4-EQF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainmenu" translatesAutoresizingMaskIntoConstraints="NO" id="suk-B9-5h1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O3N-US-zdw">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videosCell" id="v2R-eG-9x8">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v2R-eG-9x8" id="0YI-BN-HYa">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aXr-a5-RBa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O3N-US-zdw" firstAttribute="trailing" secondItem="aXr-a5-RBa" secondAttribute="trailing" id="6w0-jH-WvB"/>
+                            <constraint firstItem="suk-B9-5h1" firstAttribute="top" secondItem="aXr-a5-RBa" secondAttribute="top" id="XDh-vq-w7Y"/>
+                            <constraint firstItem="O3N-US-zdw" firstAttribute="top" secondItem="suk-B9-5h1" secondAttribute="bottom" constant="8" symbolic="YES" id="XZg-fz-t9W"/>
+                            <constraint firstItem="O3N-US-zdw" firstAttribute="leading" secondItem="aXr-a5-RBa" secondAttribute="leading" id="dFo-fw-zhq"/>
+                            <constraint firstItem="suk-B9-5h1" firstAttribute="leading" secondItem="aXr-a5-RBa" secondAttribute="leading" id="tN1-gA-96P"/>
+                            <constraint firstItem="suk-B9-5h1" firstAttribute="trailing" secondItem="aXr-a5-RBa" secondAttribute="trailing" id="vWQ-Ul-DLe"/>
+                            <constraint firstAttribute="bottom" secondItem="O3N-US-zdw" secondAttribute="bottom" id="w7H-kW-3X3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Videos" image="play" catalog="system" id="yXu-rl-Lhe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cc-av-Lab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="363"/>
+            <point key="canvasLocation" x="817.55725190839689" y="362.67605633802816"/>
         </scene>
         <!--News-->
         <scene sceneID="j3u-UR-xH6">

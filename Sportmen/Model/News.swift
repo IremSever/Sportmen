@@ -7,8 +7,8 @@
 import Foundation
 
  // MARK: - Empty
- struct Empty: Codable {
-     let meta: Meta
+ struct News: Codable {
+     let meta: NewsMeta
      let data: [Datum]
  }
 
@@ -114,7 +114,7 @@ import Foundation
  }
 
  // MARK: - Meta
- struct Meta: Codable {
+ struct NewsMeta: Codable {
      let statusCode: Int
      let message, description, brand: String
 

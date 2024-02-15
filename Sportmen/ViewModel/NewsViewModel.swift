@@ -8,11 +8,11 @@
 import Foundation
 
 class NewsViewModel {
-    private var webService = Webservice()
+    private var newsWebService = NewsWebservice()
     private var news = [Datum]()
     
     func fetchNewsData(completion: @escaping() -> ()) {
-        webService.getNewsData { [weak self] result in
+        newsWebService.getNewsData { [weak self] result in
             switch result {
             case .success(let newsData):
                 self?.news = newsData.data
