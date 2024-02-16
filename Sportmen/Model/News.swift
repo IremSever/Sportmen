@@ -11,6 +11,7 @@ import Foundation
      let meta: NewsMeta
      let data: [Datum]
  }
+
  // MARK: - Datum
  struct Datum: Codable {
      let id, reportID: Int?
@@ -39,6 +40,7 @@ import Foundation
          case source = "Source"
      }
  }
+
  // MARK: - Category
  struct Category: Codable {
      let name, key: String
@@ -48,6 +50,7 @@ import Foundation
          case key = "Key"
      }
  }
+
  // MARK: - Source
  struct Source: Codable {
      let name: Name
@@ -64,6 +67,7 @@ import Foundation
          case favicon = "Favicon"
      }
  }
+
  enum Domain: String, Codable {
      case asporCOMTr = "aspor.com.tr"
      case fanatikCOMTr = "fanatik.com.tr"
@@ -78,6 +82,7 @@ import Foundation
      case trtsporCOMTr = "trtspor.com.tr"
      case yenisafakCOM = "yenisafak.com"
  }
+
  enum Name: String, Codable {
      case aSpor = "ASpor"
      case fanatik = "Fanatik"
@@ -92,6 +97,7 @@ import Foundation
      case trtSpor = "TRT Spor"
      case yeniŞafakSpor = "Yeni Şafak Spor"
  }
+
  enum ShortName: String, Codable {
      case aspr = "ASPR"
      case fntk = "FNTK"
@@ -106,6 +112,7 @@ import Foundation
      case trtspr = "TRTSPR"
      case ysfk = "YSFK"
  }
+
  // MARK: - Meta
  struct NewsMeta: Codable {
      let statusCode: Int
@@ -116,3 +123,4 @@ import Foundation
          case message, description, brand
      }
  }
+

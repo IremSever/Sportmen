@@ -8,8 +8,8 @@
 import Foundation
 // MARK: - Videos
 struct Videos: Codable {
-    let meta: VideosMeta
-    let data: VideosDataClass
+    let meta: VideosMeta?
+    let data: VideosDataClass?
 }
 // MARK: - VideoDataClass
 struct VideosDataClass: Codable {
@@ -32,7 +32,7 @@ struct VideoResponse: Codable {
     let description: String?
     let images: Images?
     let playlists: [Playlist]?
-    let publishDate: Date?
+    let publishDate: String?
     let title: String?
     let url: String?
     

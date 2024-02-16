@@ -15,7 +15,7 @@ class VideosViewModel {
         videosWebService.getVideosData { [weak self] result in
             switch result {
             case .success(let videosData):
-                self?.videos = videosData.data.list.response
+                self?.videos = videosData.data?.list.response ?? []
                 completion()
             case .failure(let error):
                 print("Error processing json data: \(error)")

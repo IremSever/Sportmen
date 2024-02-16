@@ -14,14 +14,14 @@ class VideosViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.videoViewModel.dataSource = self
-        self.videoViewModel.delegate = self
+        self.videosTableView.dataSource = self
+        self.videosTableView.delegate = self
         loadVideoData()
     }
     private func loadVideoData() {
         videoViewModel.fetchVideosData { [weak self] in
             DispatchQueue.main.async {
-                self?.videoViewModel.reloadData()
+                self?.videosTableView.reloadData()
             }
         }
     }
