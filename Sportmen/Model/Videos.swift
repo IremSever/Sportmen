@@ -6,18 +6,15 @@
 //
 
 import Foundation
-
 // MARK: - Videos
 struct Videos: Codable {
     let meta: VideosMeta
     let data: VideosDataClass
 }
-
 // MARK: - VideoDataClass
 struct VideosDataClass: Codable {
     let list: VideoList
 }
-
 // MARK: - VideoList
 struct VideoList: Codable {
     let response: [VideoResponse]
@@ -28,7 +25,6 @@ struct VideoList: Codable {
         case status = "Status"
     }
 }
-
 // MARK: - Response
 struct VideoResponse: Codable {
     let channelImages: ChannelImages?
@@ -39,7 +35,7 @@ struct VideoResponse: Codable {
     let publishDate: Date?
     let title: String?
     let url: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case channelImages = "ChannelImages"
         case channelTitle = "ChannelTitle"
@@ -51,7 +47,6 @@ struct VideoResponse: Codable {
         case url = "Url"
     }
 }
-
 // MARK: - ChannelImages
 struct ChannelImages: Codable {
     let channelImagesDefault, high, medium: String
@@ -61,11 +56,9 @@ struct ChannelImages: Codable {
         case high, medium
     }
 }
-
 enum ChannelTitle: String, Codable {
     case futbolPlus = "FUTBOL PLUS"
 }
-
 // MARK: - Images
 struct Images: Codable {
     let imagesDefault, high, maxres, medium: String
@@ -76,7 +69,6 @@ struct Images: Codable {
         case high, maxres, medium, standard
     }
 }
-
 // MARK: - Playlist
 struct Playlist: Codable {
     let id: Int
@@ -87,7 +79,6 @@ struct Playlist: Codable {
         case title = "Title"
     }
 }
-
 // MARK: - Meta
 struct VideosMeta: Codable {
     let statusCode: Int
