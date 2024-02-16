@@ -5,6 +5,7 @@
 //  Created by IREM SEVER on 9.02.2024.
 //
 import Foundation
+
  // MARK: - News
  struct News: Codable {
      let meta: NewsMeta
