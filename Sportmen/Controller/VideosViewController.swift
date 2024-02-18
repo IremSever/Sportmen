@@ -29,9 +29,12 @@ class VideosViewController : UIViewController {
 
 extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
     
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }*/
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+            return 200
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoViewModel.numberOfRowsInSection(section: section)
