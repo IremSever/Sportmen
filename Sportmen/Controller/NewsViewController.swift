@@ -25,15 +25,25 @@ class NewsViewController: UIViewController {
             }
         }
     }
+    func showNewsDetail(_ news: Datum) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "NewsDetailVC") as? NewsDetailVC {
+            newsDetailVC.selectedNews = news
+            navigationController?.pushViewController(newsDetailVC, animated: true)
+        }
+    }
 }
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let selectedNews = newsViewModel.cellForRowAt(indexPath: indexPath)
+            showNewsDetail(selectedNews)
+        }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row % 4 == 0 {
-            return 200
+            return 210
         } else {
-            return 100
+            return 110
         }
     }
     
