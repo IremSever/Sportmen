@@ -30,9 +30,7 @@ class VideosViewController : UIViewController {
 extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-            return 200
-        
+        return 355
     }
     
     
@@ -43,9 +41,9 @@ extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let videos = videoViewModel.cellForRowAt(indexPath: indexPath)
         
-            let cell = videosTableView.dequeueReusableCell(withIdentifier: "videosCell", for: indexPath) as! VideosTableViewCell
-            cell.setCellWithValuesOf(videos)
-            print("videosCell")
-            return cell
+        let cell = videosTableView.dequeueReusableCell(withIdentifier: "videosCell", for: indexPath) as! VideosTableViewCell
+        cell.setCellWithValuesOf(videos)
+        print("videosCell")
+        return cell
     }
 }
