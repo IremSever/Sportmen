@@ -108,6 +108,8 @@
 		66CF92672B75F6EF0000C207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */,
+				61D1BA692B8306CB00314738 /* NewsDetailVC.swift */,
 				66FF4B162B7F3F1F00C1DBED /* NewsTableViewCells */,
 				66FF4B142B7E46C300C1DBED /* VideosTableViewCell.swift */,
 			);
@@ -156,8 +158,6 @@
 			children = (
 				66FF4B012B7CAADB00C1DBED /* NewsTableViewCell1.swift */,
 				66FF4B172B7F3FAF00C1DBED /* NewsTableViewCell2.swift */,
-				61D1BA692B8306CB00314738 /* NewsDetailVC.swift */,
-				61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */,
 			);
 			path = NewsTableViewCells;
 			sourceTree = "<group>";

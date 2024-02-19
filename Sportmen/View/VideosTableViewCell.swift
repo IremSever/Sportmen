@@ -32,6 +32,12 @@ class VideosTableViewCell: UITableViewCell {
         self.videoImageView.layer.cornerRadius = 20
         self.videoImageView.clipsToBounds = true
         
+        self.clipsToBounds = false
+        self.layer.shadowColor = UIColor.systemGreen.cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        self.layer.shadowRadius = 4
+        
         // Shadow - Title
         self.videoTitleLabel.layer.shadowColor = UIColor.systemGreen.cgColor
         self.videoTitleLabel.layer.shadowOpacity = 0.2
