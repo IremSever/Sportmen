@@ -34,6 +34,17 @@ class NewsTableViewCell2: UITableViewCell {
         // Before we download the image we clear out the old one
         self.newsImgCell2.image = nil
         getImageDataFrom(url: imageURL, forCell: 2)
+        
+        // Corner Radius - Image
+        self.newsImgCell2.layer.cornerRadius = 10
+        self.newsImgCell2.clipsToBounds = true
+        
+        
+        // Shadow - Title
+        self.newsTitleCell2.layer.shadowColor = UIColor.systemGreen.cgColor
+        self.newsTitleCell2.layer.shadowOpacity = 0.2
+        self.newsTitleCell2.layer.shadowOffset = CGSize(width: 0.15, height: 0.15)
+        self.newsTitleCell2.layer.shadowRadius = 2
     }
     
     private func getImageDataFrom(url: URL, forCell cellNumber: Int) {

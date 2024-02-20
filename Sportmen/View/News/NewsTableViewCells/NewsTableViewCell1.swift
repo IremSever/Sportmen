@@ -26,6 +26,24 @@ class NewsTableViewCell1: UITableViewCell {
         
         self.newsImgCell1.image = nil
         getImageDataFrom(url: imageURL, forCell: 1)
+        
+        
+        // Corner Radius - Image
+        self.newsImgCell1.layer.cornerRadius = 10
+        self.newsImgCell1.clipsToBounds = true
+        
+        // Shadow - Cell
+        /*self.clipsToBounds = false
+        self.layer.shadowColor = UIColor.systemGreen.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 10, height: 10)
+        self.layer.shadowRadius = 50*/
+        
+        // Shadow - Title
+        self.newsTtleCell1.layer.shadowColor = UIColor.systemGreen.cgColor
+        self.newsTtleCell1.layer.shadowOpacity = 0.2
+        self.newsTtleCell1.layer.shadowOffset = CGSize(width: 0.15, height: 0.15)
+        self.newsTtleCell1.layer.shadowRadius = 2
     }
     
     private func getImageDataFrom(url: URL, forCell cellNumber: Int) {
