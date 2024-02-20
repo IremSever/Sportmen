@@ -57,12 +57,10 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row % 4 == 0 {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! NewsTableViewCell1
             cell.setCell1WithValuesOf(news)
-            print("cell1")
             return cell
         } else {
             let cell = newsTableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! NewsTableViewCell2
             cell.setCell2WithValuesOf(news)
-            print("cell2")
             return cell
         }
     }

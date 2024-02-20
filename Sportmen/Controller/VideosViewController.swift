@@ -19,21 +19,30 @@ class VideosViewController : UIViewController {
         loadVideoData()
     }
     private func loadVideoData() {
-        videoViewModel.fetchVideosData { [weak self] in
+        videoViewModel.fetchVideosData { [weak self] result in
             DispatchQueue.main.async {
                 self?.videosTableView.reloadData()
             }
         }
     }
+    
+    func showVideosDetail(_ videos: VideoResponse) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let videosDetailVC = storyboard.instantiateViewController(withIdentifier: "VideosDetailVC") as? VideosDetailVC {
+            videosDetailVC.selectedVideos = videos
+            navigationController?.pushViewController(videosDetailVC, animated: true)
+        }
+    }
 }
 
 extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let selectedVideos = videoViewModel.cellForRowAt(indexPath: indexPath)
+            showVideosDetail(selectedVideos)
+        }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 355
     }
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoViewModel.numberOfRowsInSection(section: section)
     }
@@ -43,7 +52,6 @@ extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = videosTableView.dequeueReusableCell(withIdentifier: "videosCell", for: indexPath) as! VideosTableViewCell
         cell.setCellWithValuesOf(videos)
-        print("videosCell")
         return cell
     }
 }

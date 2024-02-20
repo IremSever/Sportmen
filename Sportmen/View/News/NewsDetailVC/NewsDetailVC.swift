@@ -20,19 +20,10 @@ class NewsDetailVC: UIViewController {
     
     var selectedNews: Datum?
     
-    lazy var newLabel: UILabel = {
-       let label = UILabel()
-        label.numberOfLines = 2
-        label.backgroundColor = .red
-        label.text = "tesr"
-        return label
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let news = selectedNews {
             setNewsDetailWithValuesOf(news)
-        
         }
     }
     
