@@ -18,12 +18,12 @@ class NewsTableViewCell2: UITableViewCell {
     
     @IBOutlet weak var newsTitleCell2: UILabel!
     
-    @IBOutlet weak var newsSpotCell2: UILabel!
+    //@IBOutlet weak var newsSpotCell2: UILabel!
     
     func setCell2WithValuesOf(_ news: Datum) {
         self.newsTitleCell2.text = news.title
         self.newsSourceCell2.text = news.source?.name.rawValue
-        self.newsSpotCell2.text = news.spot
+        //self.newsSpotCell2.text = news.spot
         self.newsPublishedDateCell2.text = news.publishedDate
         
         guard let urlString = news.image, let imageURL = URL(string: urlString) else {
