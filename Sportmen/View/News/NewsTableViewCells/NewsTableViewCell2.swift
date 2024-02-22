@@ -36,7 +36,7 @@ class NewsTableViewCell2: UITableViewCell {
         getImageDataFrom(url: imageURL, forCell: 2)
         
         // Corner Radius - Image
-        self.newsImgCell2.layer.cornerRadius = 10
+        self.newsImgCell2.layer.cornerRadius = 8
         self.newsImgCell2.clipsToBounds = true
         
         

@@ -29,7 +29,7 @@ class NewsTableViewCell1: UITableViewCell {
         
         
         // Corner Radius - Image
-        self.newsImgCell1.layer.cornerRadius = 10
+        self.newsImgCell1.layer.cornerRadius = 20
         self.newsImgCell1.clipsToBounds = true
         
         // Shadow - Cell
