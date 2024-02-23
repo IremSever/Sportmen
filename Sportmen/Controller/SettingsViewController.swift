@@ -10,12 +10,14 @@ import UIKit
 
 class SettingsViewController : UIViewController {
     let headers = ["Account", "More Features", "Support"]
-    let accounts = ["My Account"]
-    let moreFeatures = ["Profit&Loss", "Notifications"]
+    let accounts = ["Teams", "News Souces", "Notifications"]
+    let moreFeatures = ["Dark Mode", "Text Style"]
     let support = ["Privacy Policy", "Clarification Text", "Contact Us"]
     @IBOutlet weak var settingsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsTableView.sectionHeaderTopPadding = 0
         registerTableCells()
     }
     
@@ -68,5 +70,44 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
         cell.contentView.backgroundColor = .white
         cell.settingsTitles.text = headers[section]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 60
+        case 1:
+            return 60
+        case 2:
+            return 60
+        default:
+            return 60
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 40
+        case 1:
+            return 40
+        case 2:
+            return 40
+        default:
+            return 40
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 20
+        case 1:
+            return 20
+        case 2:
+            return 20
+        default:
+            return 20
+        }
     }
 }
