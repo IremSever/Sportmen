@@ -71,6 +71,4 @@ extension SettingsViewController : UIWebViewDelegate, UITableViewDataSource {
         cell.settingsTitles.text = headers[section]
         return cell
     }
-    
-    
 }
