@@ -46,7 +46,30 @@ extension SettingsViewController : UIWebViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
+        cell.settingsTitles.font = UIFont.systemFont(ofSize: 15)
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
+        switch indexPath.section {
+        case 0:
+            cell.settingsTitles.text = accounts[indexPath.row]
+        case 1:
+            cell.settingsTitles.text = moreFeatures[indexPath.row]
+        case 2:
+            cell.settingsTitles.text = support[indexPath.row]
+        default:
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> UIView? {
+        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
+        cell.settingsTitles.font = UIFont.boldSystemFont(ofSize: 20)
+        cell.backgroundColor = .white
+        cell.contentView.backgroundColor = .white
+        cell.settingsTitles.text = headers[section]
+        return cell
     }
     
     
