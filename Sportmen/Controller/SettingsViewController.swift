@@ -16,7 +16,6 @@ class SettingsViewController : UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         registerTableCells()
     }
     
@@ -25,8 +24,7 @@ class SettingsViewController : UIViewController {
     }
 }
 
-extension SettingsViewController : UIWebViewDelegate, UITableViewDataSource {
-   
+extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return headers.count
@@ -63,7 +61,7 @@ extension SettingsViewController : UIWebViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
         cell.settingsTitles.font = UIFont.boldSystemFont(ofSize: 20)
         cell.backgroundColor = .white
