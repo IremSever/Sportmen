@@ -59,6 +59,7 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
                 let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
                 cell.addSubview(switchControl)
             }
+            
         case 2:
             cell.settingsTitles.text = support[indexPath.row]
         default:
