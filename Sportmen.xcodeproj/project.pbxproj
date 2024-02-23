@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6135ED782B887CE900ED5B3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED772B887CE900ED5B3B /* SettingsViewController.swift */; };
+		6135ED7D2B88886300ED5B3B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */; };
+		6135ED7E2B88886300ED5B3B /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */; };
 		61D1BA6B2B8306CB00314738 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1BA692B8306CB00314738 /* NewsDetailVC.swift */; };
 		61D1BA6C2B8306CB00314738 /* NewsDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */; };
 		61D1BA752B83881600314738 /* VideosDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1BA732B83881600314738 /* VideosDetailVC.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6135ED772B887CE900ED5B3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		61D1BA692B8306CB00314738 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailVC.xib; sourceTree = "<group>"; };
 		61D1BA732B83881600314738 /* VideosDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosDetailVC.swift; sourceTree = "<group>"; };
@@ -67,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6135ED7A2B8887C600ED5B3B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */,
+				6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		61D1BA702B836A6B00314738 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 		66CF92672B75F6EF0000C207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6135ED7A2B8887C600ED5B3B /* Settings */,
 				61D1BA722B836A8700314738 /* Videos */,
 				61D1BA702B836A6B00314738 /* News */,
 			);
@@ -179,6 +195,7 @@
 				66CF92652B750E8E0000C207 /* NewsViewController.swift */,
 				66CF924A2B74B2E60000C207 /* ViewController.swift */,
 				66FF4B042B7E1DED00C1DBED /* VideosViewController.swift */,
+				6135ED772B887CE900ED5B3B /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +275,7 @@
 				66CF92502B74B2E80000C207 /* Assets.xcassets in Resources */,
 				61D1BA6C2B8306CB00314738 /* NewsDetailVC.xib in Resources */,
 				61D1BA762B83881600314738 /* VideosDetailVC.xib in Resources */,
+				6135ED7E2B88886300ED5B3B /* HeaderTableViewCell.xib in Resources */,
 				66CF924E2B74B2E60000C207 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,8 +297,10 @@
 				66FF4B152B7E46C300C1DBED /* VideosTableViewCell.swift in Sources */,
 				66FF4B0F2B7E2C6600C1DBED /* Videos.swift in Sources */,
 				66FF4B022B7CAADB00C1DBED /* NewsTableViewCell1.swift in Sources */,
+				6135ED7D2B88886300ED5B3B /* HeaderTableViewCell.swift in Sources */,
 				66CF926F2B7606F50000C207 /* NewsWebservice.swift in Sources */,
 				61D1BA6B2B8306CB00314738 /* NewsDetailVC.swift in Sources */,
+				6135ED782B887CE900ED5B3B /* SettingsViewController.swift in Sources */,
 				66CF92472B74B2E60000C207 /* AppDelegate.swift in Sources */,
 				66CF92712B763B630000C207 /* NewsViewModel.swift in Sources */,
 				66CF926D2B75FEDE0000C207 /* News.swift in Sources */,
