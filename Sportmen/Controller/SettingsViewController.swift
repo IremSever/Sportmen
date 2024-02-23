@@ -55,6 +55,10 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
             cell.settingsTitles.text = accounts[indexPath.row]
         case 1:
             cell.settingsTitles.text = moreFeatures[indexPath.row]
+            if indexPath.row == 0 {
+                let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
+                cell.addSubview(switchControl)
+            }
         case 2:
             cell.settingsTitles.text = support[indexPath.row]
         default:
@@ -73,41 +77,14 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 60
-        case 1:
-            return 60
-        case 2:
-            return 60
-        default:
-            return 60
-        }
+        return 55
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return 40
-        case 1:
-            return 40
-        case 2:
-            return 40
-        default:
-            return 40
-        }
+        return 35
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return 20
-        case 1:
-            return 20
-        case 2:
-            return 20
-        default:
-            return 20
-        }
+        return 15
     }
 }
