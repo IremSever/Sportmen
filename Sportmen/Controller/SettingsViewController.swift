@@ -59,7 +59,7 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
                 let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
                 cell.addSubview(switchControl)
             }
-            
+
         case 2:
             cell.settingsTitles.text = support[indexPath.row]
         default:
@@ -82,10 +82,10 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
+        return 40
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 15
+        return 20
     }
 }
