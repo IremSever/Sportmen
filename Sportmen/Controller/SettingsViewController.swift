@@ -87,17 +87,25 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = .white
         cell.contentView.backgroundColor = .white
         cell.settingsTitles.text = headers[section]
-        return cell
+
+        if section == 1 && isExpanded {
+            let expandLabel = UILabel(frame: CGRect(x: 10, y: 30, width: 100, height: 20))
+            expandLabel.font = UIFont.systemFont(ofSize: 15)
+            expandLabel.textColor = .black
+            expandLabel.text = "Text Style"
+            cell.contentView.addSubview(expandLabel)
+        }
+
+        return cell.contentView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 && isExpanded {
+        if indexPath.section == 1 && indexPath.row == moreFeatures.index(after: 0) && isExpanded {
             return 115
         } else {
             return 55
         }
     }
-
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
