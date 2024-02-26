@@ -13,6 +13,7 @@
 		615EAC1A2B8C6C5800ADD2CA /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EAC182B8C6C5800ADD2CA /* ExpandedTableViewCell.swift */; };
 		615EAC1B2B8C6C5800ADD2CA /* ExpandedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615EAC192B8C6C5800ADD2CA /* ExpandedTableViewCell.xib */; };
 		615EAC1D2B8CC11600ADD2CA /* MyTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EAC1C2B8CC11600ADD2CA /* MyTeam.swift */; };
+		615EAC1F2B8CC22600ADD2CA /* MyTeamWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EAC1E2B8CC22600ADD2CA /* MyTeamWebservice.swift */; };
 		61D1BA6B2B8306CB00314738 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1BA692B8306CB00314738 /* NewsDetailVC.swift */; };
 		61D1BA6C2B8306CB00314738 /* NewsDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */; };
 		61D1BA752B83881600314738 /* VideosDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1BA732B83881600314738 /* VideosDetailVC.swift */; };
@@ -43,6 +44,7 @@
 		615EAC182B8C6C5800ADD2CA /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		615EAC192B8C6C5800ADD2CA /* ExpandedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTableViewCell.xib; sourceTree = "<group>"; };
 		615EAC1C2B8CC11600ADD2CA /* MyTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeam.swift; sourceTree = "<group>"; };
+		615EAC1E2B8CC22600ADD2CA /* MyTeamWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamWebservice.swift; sourceTree = "<group>"; };
 		61D1BA692B8306CB00314738 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		61D1BA6A2B8306CB00314738 /* NewsDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailVC.xib; sourceTree = "<group>"; };
 		61D1BA732B83881600314738 /* VideosDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosDetailVC.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				66CF926E2B7606F50000C207 /* NewsWebservice.swift */,
 				66FF4B102B7E3A4200C1DBED /* VideosWebService.swift */,
+				615EAC1E2B8CC22600ADD2CA /* MyTeamWebservice.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66FF4B052B7E1DED00C1DBED /* VideosViewController.swift in Sources */,
+				615EAC1F2B8CC22600ADD2CA /* MyTeamWebservice.swift in Sources */,
 				66FF4B182B7F3FAF00C1DBED /* NewsTableViewCell2.swift in Sources */,
 				66CF92662B750E8E0000C207 /* NewsViewController.swift in Sources */,
 				66FF4B132B7E3B1200C1DBED /* VideosViewModel.swift in Sources */,
