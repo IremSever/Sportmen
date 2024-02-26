@@ -14,7 +14,7 @@ class SettingsViewController : UIViewController {
     let moreFeatures = ["Dark Mode", "Text Style"]
     let support = ["Privacy Policy", "Clarification Text", "Contact Us"]
     @IBOutlet weak var settingsTableView: UITableView!
-    
+    var isExpanded = false
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.sectionHeaderTopPadding = 0
@@ -38,7 +38,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return accounts.count
         case 1:
-            return moreFeatures.count + 1
+            return moreFeatures.count
         case 2:
             return support.count
         default:
@@ -47,7 +47,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 1 && indexPath.row == moreFeatures.count {
+        if indexPath.section == 1 && indexPath.row == moreFeatures.index(after: 0) && isExpanded {
             let cell = settingsTableView.dequeueReusableCell(withIdentifier: "ExpandedTableViewCell") as! ExpandedTableViewCell
             return cell
         } else {
@@ -60,8 +60,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.settingsTitles.text = accounts[indexPath.row]
             case 1:
                 cell.settingsTitles.text = moreFeatures[indexPath.row]
-                if indexPath.row == 0 {
-                    let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
+                if indexPath.row == 0 {                    let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
                     cell.addSubview(switchControl)
                 } else if indexPath.row == 1 {
                     let disclosureIndicator = UIImageView(image: UIImage(systemName: "chevron.down"))
@@ -75,6 +74,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == moreFeatures.index(after: 0) {
+            isExpanded.toggle()
+            tableView.reloadData()
+        }
+    }
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
         cell.settingsTitles.font = UIFont.boldSystemFont(ofSize: 20)
@@ -85,12 +91,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 && indexPath.row == moreFeatures.count {
+        if indexPath.section == 1 && isExpanded {
             return 115
         } else {
             return 55
         }
     }
+
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
