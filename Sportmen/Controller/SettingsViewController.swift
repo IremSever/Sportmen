@@ -21,12 +21,13 @@ class SettingsViewController : UIViewController {
         registerTableCells()
     }
     
-    func registerTableCells(){
+    func registerTableCells() {
         settingsTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
+        settingsTableView.register(UINib(nibName: "ExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: "ExpandedTableViewCell")
     }
 }
 
-extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return headers.count
@@ -37,7 +38,7 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
         case 0:
             return accounts.count
         case 1:
-            return moreFeatures.count
+            return moreFeatures.count + 1
         case 2:
             return support.count
         default:
@@ -46,28 +47,34 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
-        cell.settingsTitles.font = UIFont.systemFont(ofSize: 15)
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
-        switch indexPath.section {
-        case 0:
-            cell.settingsTitles.text = accounts[indexPath.row]
-        case 1:
-            cell.settingsTitles.text = moreFeatures[indexPath.row]
-            if indexPath.row == 0 {
-                let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
-                cell.addSubview(switchControl)
+        if indexPath.section == 1 && indexPath.row == moreFeatures.count {
+            let cell = settingsTableView.dequeueReusableCell(withIdentifier: "ExpandedTableViewCell") as! ExpandedTableViewCell
+            return cell
+        } else {
+            let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
+            cell.settingsTitles.font = UIFont.systemFont(ofSize: 15)
+            cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
+            switch indexPath.section {
+            case 0:
+                cell.settingsTitles.text = accounts[indexPath.row]
+            case 1:
+                cell.settingsTitles.text = moreFeatures[indexPath.row]
+                if indexPath.row == 0 {
+                    let switchControl = UISwitch(frame: CGRect(x: tableView.frame.size.width - 70, y: 15, width: 60, height: 30))
+                    cell.addSubview(switchControl)
+                } else if indexPath.row == 1 {
+                    let disclosureIndicator = UIImageView(image: UIImage(systemName: "chevron.down"))
+                    cell.accessoryView = disclosureIndicator
+                }
+            case 2:
+                cell.settingsTitles.text = support[indexPath.row]
+            default:
+                return UITableViewCell()
             }
-
-        case 2:
-            cell.settingsTitles.text = support[indexPath.row]
-        default:
-            return UITableViewCell()
+            return cell
         }
-        return cell
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
         cell.settingsTitles.font = UIFont.boldSystemFont(ofSize: 20)
@@ -78,7 +85,11 @@ extension SettingsViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        if indexPath.section == 1 && indexPath.row == moreFeatures.count {
+            return 115
+        } else {
+            return 55
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
