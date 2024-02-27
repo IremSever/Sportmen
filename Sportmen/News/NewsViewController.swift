@@ -35,12 +35,15 @@ class NewsViewController: UIViewController {
 }
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
- 
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row % 4 == 0 {
             return 290
         } else {
-            return 122
+            let screenHeight = UIScreen.main.bounds.height
+            let remainingHeight = screenHeight - 290
+            let cell2Height = remainingHeight / 3
+            return cell2Height
         }
     }
     
@@ -63,7 +66,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let selectedNews = newsViewModel.cellForRowAt(indexPath: indexPath)
-            showNewsDetail(selectedNews)
-        }
+        let selectedNews = newsViewModel.cellForRowAt(indexPath: indexPath)
+        showNewsDetail(selectedNews)
+    }
 }

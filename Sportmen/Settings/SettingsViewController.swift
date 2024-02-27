@@ -16,19 +16,34 @@ class SettingsViewController : UIViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
     
-    var isExpanded = false
+    var isExpanded = false // Button
     var isSwitch = false
+    var expandedIndexPath: IndexPath?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        settingsTableView.sectionHeaderTopPadding = 0
-        registerTableCells()
-    }
-    
-    func registerTableCells() {
+            super.viewDidLoad()
+            settingsTableView.sectionHeaderTopPadding = 0
+            registerTableCells()
+        }
+        
+        func registerTableCells() {
             settingsTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
             settingsTableView.register(UINib(nibName: "StandartTableViewCell", bundle: nil), forCellReuseIdentifier: "StandartTableViewCell")
             settingsTableView.register(UINib(nibName: "ExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: "ExpandedTableViewCell")
+        }
+        
+        func enableDarkMode() {
+            self.settingsTableView.backgroundColor = .black
+            self.view.backgroundColor = .black
+            self.tabBarController?.tabBar.barTintColor = .black
+            self.navigationController?.navigationBar.barTintColor = .black
+        }
+        
+        func disableDarkMode() {
+            self.settingsTableView.backgroundColor = .white
+            self.view.backgroundColor = .white
+            self.tabBarController?.tabBar.barTintColor = .white
+            self.navigationController?.navigationBar.barTintColor = .white
         }
     }
 
@@ -42,7 +57,11 @@ class SettingsViewController : UIViewController {
             case 0:
                 return accounts.count
             case 1:
-                return moreFeatures.count
+                if isExpanded && expandedIndexPath?.section == 1 {
+                                return moreFeatures.count + 1
+                            } else {
+                                return moreFeatures.count
+                            }
             case 2:
                 return support.count
             default:
@@ -56,30 +75,42 @@ class SettingsViewController : UIViewController {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "StandartTableViewCell", for: indexPath) as! StandartTableViewCell
-                cell.switchDarkMode.isHidden = !isSwitch
-                cell.buttonExpandCell.isHidden = !isExpanded
+                
                 switch indexPath.section {
                 case 0:
+                    cell.switchDarkMode.isHidden = !isSwitch
+                    cell.buttonExpandCell.isHidden = !isExpanded
                     cell.lblStandartCell.text = accounts[indexPath.row]
                 case 1:
                     if indexPath.row == 0 {
                         cell.lblStandartCell.text = moreFeatures[indexPath.row]
+                        cell.switchDarkMode.isHidden = (moreFeatures[indexPath.row] != "Dark Mode")
+                        cell.buttonExpandCell.isHidden = !isExpanded
+                        cell.switchDarkMode.isOn = isSwitch // Switch durumunu güncelle
                     } else if indexPath.row == 1 {
                         cell.lblStandartCell.text = moreFeatures[indexPath.row]
+                        cell.switchDarkMode.isHidden = !isSwitch
+                        cell.buttonExpandCell.isHidden = (moreFeatures[indexPath.row] != "Text Style")
+                    } else {
+                        isExpanded = true
+                        cell.buttonExpandCell.isHidden = true
                     }
                 case 2:
+                    cell.switchDarkMode.isHidden = !isSwitch
+                    cell.buttonExpandCell.isHidden = !isExpanded
                     cell.lblStandartCell.text = support[indexPath.row]
                 default:
                     return UITableViewCell()
                 }
+                cell.switchHandler = { [weak self] isDarkMode in
+                    if isDarkMode {
+                        self?.enableDarkMode()
+                    } else {
+                        self?.disableDarkMode()
+                    }
+                }
+                
                 return cell
-            }
-        }
-
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            if indexPath.section == 1 && indexPath.row == moreFeatures.count {
-                isExpanded.toggle()
-                tableView.reloadData()
             }
         }
         

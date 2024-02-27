@@ -9,8 +9,6 @@ import UIKit
 
 class ExpandedTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var labelLargeA: UILabel!
-    @IBOutlet weak var labelSmallA: UILabel!
     @IBOutlet weak var buttonFontGeorgia: UIButton!
     @IBOutlet weak var buttonFontFutura: UIButton!
     @IBOutlet weak var textSlider: UISlider!
