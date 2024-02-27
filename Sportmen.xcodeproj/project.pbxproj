@@ -10,6 +10,8 @@
 		6135ED782B887CE900ED5B3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED772B887CE900ED5B3B /* SettingsViewController.swift */; };
 		6135ED7D2B88886300ED5B3B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */; };
 		6135ED7E2B88886300ED5B3B /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */; };
+		614107A12B8DB7340062AFBF /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614107A02B8DB7340062AFBF /* MyTeamViewController.swift */; };
+		614107A62B8DB83E0062AFBF /* MyTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614107A52B8DB83E0062AFBF /* MyTeamViewModel.swift */; };
 		615EAC1A2B8C6C5800ADD2CA /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EAC182B8C6C5800ADD2CA /* ExpandedTableViewCell.swift */; };
 		615EAC1B2B8C6C5800ADD2CA /* ExpandedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615EAC192B8C6C5800ADD2CA /* ExpandedTableViewCell.xib */; };
 		615EAC1D2B8CC11600ADD2CA /* MyTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EAC1C2B8CC11600ADD2CA /* MyTeam.swift */; };
@@ -42,6 +44,8 @@
 		6135ED772B887CE900ED5B3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		614107A02B8DB7340062AFBF /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
+		614107A52B8DB83E0062AFBF /* MyTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewModel.swift; sourceTree = "<group>"; };
 		615EAC182B8C6C5800ADD2CA /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		615EAC192B8C6C5800ADD2CA /* ExpandedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTableViewCell.xib; sourceTree = "<group>"; };
 		615EAC1C2B8CC11600ADD2CA /* MyTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeam.swift; sourceTree = "<group>"; };
@@ -92,6 +96,13 @@
 				615EAC192B8C6C5800ADD2CA /* ExpandedTableViewCell.xib */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		6141079F2B8DB5BF0062AFBF /* MyTeam */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyTeam;
 			sourceTree = "<group>";
 		};
 		61D1BA702B836A6B00314738 /* News */ = {
@@ -167,6 +178,7 @@
 		66CF92672B75F6EF0000C207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6141079F2B8DB5BF0062AFBF /* MyTeam */,
 				6135ED7A2B8887C600ED5B3B /* Settings */,
 				61D1BA722B836A8700314738 /* Videos */,
 				61D1BA702B836A6B00314738 /* News */,
@@ -179,6 +191,7 @@
 			children = (
 				66CF92702B763B630000C207 /* NewsViewModel.swift */,
 				66FF4B122B7E3B1200C1DBED /* VideosViewModel.swift */,
+				614107A52B8DB83E0062AFBF /* MyTeamViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 		66CF92692B75F7030000C207 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				615EAC202B8CC68400ADD2CA /* MyTeamViewController.swift */,
 				66CF926C2B75FEDE0000C207 /* News.swift */,
 				66FF4B0E2B7E2C6600C1DBED /* Videos.swift */,
 				615EAC1C2B8CC11600ADD2CA /* MyTeam.swift */,
@@ -210,7 +224,7 @@
 				66CF924A2B74B2E60000C207 /* ViewController.swift */,
 				66FF4B042B7E1DED00C1DBED /* VideosViewController.swift */,
 				6135ED772B887CE900ED5B3B /* SettingsViewController.swift */,
-				615EAC202B8CC68400ADD2CA /* MyTeamViewController.swift */,
+				614107A02B8DB7340062AFBF /* MyTeamViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,8 +322,10 @@
 				66FF4B182B7F3FAF00C1DBED /* NewsTableViewCell2.swift in Sources */,
 				66CF92662B750E8E0000C207 /* NewsViewController.swift in Sources */,
 				66FF4B132B7E3B1200C1DBED /* VideosViewModel.swift in Sources */,
+				614107A12B8DB7340062AFBF /* MyTeamViewController.swift in Sources */,
 				66FF4B112B7E3A4200C1DBED /* VideosWebService.swift in Sources */,
 				61D1BA752B83881600314738 /* VideosDetailVC.swift in Sources */,
+				614107A62B8DB83E0062AFBF /* MyTeamViewModel.swift in Sources */,
 				66CF924B2B74B2E60000C207 /* ViewController.swift in Sources */,
 				66FF4B152B7E46C300C1DBED /* VideosTableViewCell.swift in Sources */,
 				615EAC212B8CC68400ADD2CA /* MyTeamViewController.swift in Sources */,

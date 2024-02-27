@@ -7,18 +7,17 @@
 
 import Foundation
 
-
 // MARK: - MyTeam
 struct MyTeam: Codable {
     let meta: Meta
-    let data: DataClass
+    let data: [DataClass]
 }
 
 // MARK: - DataClass
 struct DataClass: Codable {
-    let news: [JSONAny]
+    let news: [JSONAny]?
     let logo, teamID: JSONNull?
-    let fixtureLink, standingsLink: String
+    let fixtureLink, standingsLink: String?
     let tournamentID: JSONNull?
 
     enum CodingKeys: String, CodingKey {

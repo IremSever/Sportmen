@@ -594,10 +594,10 @@
             </objects>
             <point key="canvasLocation" x="1659" y="1696"/>
         </scene>
-        <!--View Controller-->
+        <!--My Team View Controller-->
         <scene sceneID="7rK-lQ-GSx">
             <objects>
-                <viewController id="yKK-NG-6Lm" sceneMemberID="viewController">
+                <viewController id="yKK-NG-6Lm" customClass="MyTeamViewController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ya-KU-bVf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -634,6 +634,11 @@
                                 <rect key="frame" x="140" y="98" width="110" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-ni-RAb">
+                                <rect key="frame" x="0.0" y="347" width="393" height="505"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sPh-a5-9Ke"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -644,6 +649,9 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="1Ii-f8-JME"/>
+                    <connections>
+                        <outlet property="myTeamTableView" destination="SXJ-ni-RAb" id="5A4-I5-qxz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dt-Ny-0mk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="fJd-wd-VDV"/>

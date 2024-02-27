@@ -13,8 +13,11 @@ class SettingsViewController : UIViewController {
     let accounts = ["Teams", "News Souces", "Notifications"]
     let moreFeatures = ["Dark Mode", "Text Style"]
     let support = ["Privacy Policy", "Clarification Text", "Contact Us"]
+    
     @IBOutlet weak var settingsTableView: UITableView!
+    
     var isExpanded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.sectionHeaderTopPadding = 0
