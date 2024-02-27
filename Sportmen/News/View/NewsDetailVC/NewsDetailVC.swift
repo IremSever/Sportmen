@@ -22,6 +22,7 @@ class NewsDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let news = selectedNews {
             setNewsDetailWithValuesOf(news)
         }

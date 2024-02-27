@@ -35,10 +35,7 @@ class NewsViewController: UIViewController {
 }
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let selectedNews = newsViewModel.cellForRowAt(indexPath: indexPath)
-            showNewsDetail(selectedNews)
-        }
+ 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row % 4 == 0 {
             return 290
@@ -64,4 +61,9 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let selectedNews = newsViewModel.cellForRowAt(indexPath: indexPath)
+            showNewsDetail(selectedNews)
+        }
 }

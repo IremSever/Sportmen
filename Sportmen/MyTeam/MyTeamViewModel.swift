@@ -11,7 +11,7 @@ class MyTeamViewModel {
     private var myTeamWebService = MyTeamWebservice()
     private var myTeam = [DataClass]()
     
-    func fetchMyTeamData(completion: @escaping() -> ()) {
+    func fetchMyTeamData(completion: @escaping () -> Void) {
         myTeamWebService.getMyTeamData { [weak self] result in
             switch result {
             case .success(let myTeamData):

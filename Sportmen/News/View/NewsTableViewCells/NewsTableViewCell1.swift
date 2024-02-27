@@ -10,9 +10,7 @@ import UIKit
 class NewsTableViewCell1: UITableViewCell {
     //cell1
     @IBOutlet weak var newsImgCell1: UIImageView!
-    
     @IBOutlet weak var newsTtleCell1: UILabel!
-    
     @IBOutlet weak var newsSourceCell1: UILabel!
     
     func setCell1WithValuesOf(_ news: Datum) {

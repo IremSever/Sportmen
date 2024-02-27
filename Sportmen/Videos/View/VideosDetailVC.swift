@@ -9,7 +9,7 @@ import UIKit
 
 class VideosDetailVC: UIViewController {
     
-    @IBOutlet weak var videosWKWebView: WKWebView!
+    @IBOutlet weak var videosWKWebView: WKWebView! 
     @IBOutlet weak var videosDetailTitle: UILabel!
     @IBOutlet weak var videosDetailPublishedDate: UILabel!
     @IBOutlet weak var videosDetailSpot: UILabel!
