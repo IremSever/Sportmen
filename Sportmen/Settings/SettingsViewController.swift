@@ -42,7 +42,7 @@ class SettingsViewController : UIViewController {
             case 0:
                 return accounts.count
             case 1:
-                return isExpanded ? moreFeatures.count + 1 : 1
+                return moreFeatures.count
             case 2:
                 return support.count
             default:
