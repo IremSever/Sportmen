@@ -18,7 +18,7 @@ class SettingsViewController : UIViewController {
     
     var isExpanded = false // Button
     var isSwitch = false
-    var expandedIndexPath: IndexPath?
+    var isExpandedCell = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return accounts.count
         case 1:
-            if isExpanded && expandedIndexPath?.section == 1 {
+            if isExpandedCell {
                 return moreFeatures.count + 1
             } else {
                 return moreFeatures.count
@@ -98,7 +98,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
                     cell.lblStandartCell.text = moreFeatures[indexPath.row]
                     cell.switchDarkMode.isHidden = (moreFeatures[indexPath.row] != "Dark Mode")
                     cell.buttonExpandCell.isHidden = !isExpanded
-                    cell.switchDarkMode.isOn = isSwitch // Switch durumunu güncelle
+                    cell.switchDarkMode.isOn = isSwitch
                 } else if indexPath.row == 1 {
                     cell.lblStandartCell.text = moreFeatures[indexPath.row]
                     cell.switchDarkMode.isHidden = !isSwitch
@@ -114,6 +114,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 return UITableViewCell()
             }
+            
             cell.switchHandler = { [weak self] isDarkMode in
                 if isDarkMode {
                     self?.enableDarkMode()
@@ -121,7 +122,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
                     self?.disableDarkMode()
                 }
             }
-            
             return cell
         }
     }
@@ -145,10 +145,17 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 && indexPath.row == moreFeatures.count && isExpanded {
-            return 115
+        if indexPath.section == 1 && indexPath.row == moreFeatures.count && isExpandedCell {
+            return 120
         } else {
             return 55
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == 1 {
+            isExpandedCell = !isExpandedCell
+            tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
         }
     }
     

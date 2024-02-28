@@ -110,8 +110,6 @@
             <connections>
                 <outlet property="buttonFontFutura" destination="UNJ-m5-tl6" id="xww-xH-Gi4"/>
                 <outlet property="buttonFontGeorgia" destination="eo3-4g-jxb" id="T4v-bF-eF2"/>
-                <outlet property="labelLargeA" destination="orv-dC-Q9i" id="hb4-GI-Lar"/>
-                <outlet property="labelSmallA" destination="QST-KT-Fap" id="L1J-Qr-ovq"/>
                 <outlet property="textSlider" destination="24F-4z-Msb" id="Oyv-6h-Ph3"/>
             </connections>
             <point key="canvasLocation" x="135.87786259541986" y="10.563380281690142"/>
