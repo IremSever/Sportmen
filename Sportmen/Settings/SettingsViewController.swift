@@ -57,6 +57,8 @@ class SettingsViewController : UIViewController {
         
         settingsTableView.reloadData()
     }
+    
+    
 }
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
