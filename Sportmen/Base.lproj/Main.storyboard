@@ -265,39 +265,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" alignment="center" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="mpq-ox-k2x">
-                                <rect key="frame" x="15" y="0.0" width="363" height="51"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainmenu" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-e9-dJk">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="51"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="w6D-fC-nof">
-                                        <rect key="frame" x="280" y="10" width="83" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-Xf-Mag">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="M">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="12"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij1-eJ-nNC">
-                                                <rect key="frame" x="47" y="0.0" width="36" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="L">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="14"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-G8-kmC">
-                                <rect key="frame" x="0.0" y="101" width="393" height="751"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="290" id="i1U-Xr-bEJ" customClass="NewsTableViewCell1" customModule="Sportmen" customModuleProvider="target">
@@ -408,13 +377,10 @@
                         <viewLayoutGuide key="safeArea" id="shb-NH-0cB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mpq-ox-k2x" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" constant="15" id="0ZZ-0G-RrM"/>
-                            <constraint firstItem="mpq-ox-k2x" firstAttribute="centerX" secondItem="zpo-G8-kmC" secondAttribute="centerX" id="1kt-cO-aNP"/>
-                            <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="mpq-ox-k2x" secondAttribute="bottom" constant="50" id="6et-cN-cda"/>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="AI5-4J-Zz7"/>
-                            <constraint firstItem="mpq-ox-k2x" firstAttribute="top" secondItem="taa-wP-ROj" secondAttribute="top" id="CxX-JP-yr9"/>
+                            <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" constant="-44" id="Sj9-b6-Nlr"/>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="trailing" secondItem="shb-NH-0cB" secondAttribute="trailing" id="pZV-qK-PIo"/>
-                            <constraint firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" id="reG-3U-NqU"/>
+                            <constraint firstItem="shb-NH-0cB" firstAttribute="bottom" secondItem="zpo-G8-kmC" secondAttribute="bottom" constant="-49" id="reG-3U-NqU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="75M-ju-58C"/>
