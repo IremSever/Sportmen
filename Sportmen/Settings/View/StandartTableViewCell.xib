@@ -19,20 +19,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mts-0I-PEi">
-                        <rect key="frame" x="8" y="2" width="247" height="57"/>
+                        <rect key="frame" x="16" y="2" width="231" height="57"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVY-ra-76U">
-                        <rect key="frame" x="265" y="15" width="49" height="31"/>
+                        <rect key="frame" x="257" y="15" width="49" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="Jcu-yz-xtj"/>
                             <constraint firstAttribute="width" constant="47" id="lwT-m9-E9K"/>
                         </constraints>
                     </switch>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2M-Yi-2Hh">
-                        <rect key="frame" x="276" y="2" width="36" height="57"/>
+                        <rect key="frame" x="268" y="2" width="36" height="57"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="5Rh-Qg-ONQ"/>
                             <constraint firstAttribute="height" constant="57" id="J1S-4n-3ZY"/>
@@ -52,11 +52,11 @@
                     <constraint firstAttribute="bottom" secondItem="Mts-0I-PEi" secondAttribute="bottom" constant="2" id="C5n-oL-SgJ"/>
                     <constraint firstAttribute="bottom" secondItem="o2M-Yi-2Hh" secondAttribute="bottom" constant="2" id="FcU-S4-iZ2"/>
                     <constraint firstItem="FVY-ra-76U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Gaf-M6-REv"/>
-                    <constraint firstAttribute="trailing" secondItem="FVY-ra-76U" secondAttribute="trailing" constant="8" id="IaJ-Xk-PBm"/>
+                    <constraint firstAttribute="trailing" secondItem="FVY-ra-76U" secondAttribute="trailing" constant="16" id="IaJ-Xk-PBm"/>
                     <constraint firstItem="Mts-0I-PEi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="J3S-9o-CEB"/>
                     <constraint firstItem="o2M-Yi-2Hh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="LEe-r9-fEA"/>
-                    <constraint firstItem="Mts-0I-PEi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="f5W-L1-Mfm"/>
-                    <constraint firstAttribute="trailing" secondItem="o2M-Yi-2Hh" secondAttribute="trailing" constant="8" id="f5s-ht-KCf"/>
+                    <constraint firstItem="Mts-0I-PEi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="f5W-L1-Mfm"/>
+                    <constraint firstAttribute="trailing" secondItem="o2M-Yi-2Hh" secondAttribute="trailing" constant="16" id="f5s-ht-KCf"/>
                     <constraint firstItem="FVY-ra-76U" firstAttribute="leading" secondItem="Mts-0I-PEi" secondAttribute="trailing" constant="10" id="tas-Ok-02Z"/>
                 </constraints>
             </tableViewCellContentView>
@@ -72,7 +72,7 @@
     <resources>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
         <namedColor name="settingsBgColor">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

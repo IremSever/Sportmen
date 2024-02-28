@@ -73,6 +73,9 @@ class NewsViewController: UIViewController {
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if !isModifiedList {
+            return 122
+        }
         if indexPath.row % 4 == 0 {
             return 290
         } else {

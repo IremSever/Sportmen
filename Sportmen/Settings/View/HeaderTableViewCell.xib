@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z77-cU-OMq">
-                        <rect key="frame" x="8" y="2" width="304" height="64"/>
+                        <rect key="frame" x="16" y="2" width="288" height="64"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,10 +26,10 @@
                 </subviews>
                 <color key="backgroundColor" name="settingsBgColor"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Z77-cU-OMq" secondAttribute="trailing" constant="8" id="Pgc-XK-igg"/>
+                    <constraint firstAttribute="trailing" secondItem="Z77-cU-OMq" secondAttribute="trailing" constant="16" id="Pgc-XK-igg"/>
                     <constraint firstAttribute="bottom" secondItem="Z77-cU-OMq" secondAttribute="bottom" constant="2" id="lcT-GR-aDY"/>
                     <constraint firstItem="Z77-cU-OMq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="me3-Eo-Mp7"/>
-                    <constraint firstItem="Z77-cU-OMq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="oer-u0-G6d"/>
+                    <constraint firstItem="Z77-cU-OMq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="oer-u0-G6d"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -41,7 +41,7 @@
     </objects>
     <resources>
         <namedColor name="settingsBgColor">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

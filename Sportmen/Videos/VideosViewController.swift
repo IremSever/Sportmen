@@ -41,7 +41,7 @@ class VideosViewController : UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imgAppIcon)
         
         let lblTitleCategory = "Videos"
-            
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: lblTitleCategory)
         
         videosTableView.reloadData()
@@ -50,9 +50,9 @@ class VideosViewController : UIViewController {
 
 extension VideosViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let selectedVideos = videoViewModel.cellForRowAt(indexPath: indexPath)
-            showVideosDetail(selectedVideos)
-        }
+        let selectedVideos = videoViewModel.cellForRowAt(indexPath: indexPath)
+        showVideosDetail(selectedVideos)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 355
     }
