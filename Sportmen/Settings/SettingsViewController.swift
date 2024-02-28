@@ -25,6 +25,8 @@ class SettingsViewController : UIViewController {
         settingsTableView.sectionHeaderTopPadding = 0
         registerTableCells()
         navigationBarDesign()
+        
+        
     }
     
     func registerTableCells() {
@@ -57,7 +59,6 @@ class SettingsViewController : UIViewController {
         
         settingsTableView.reloadData()
     }
-    
     
 }
 
