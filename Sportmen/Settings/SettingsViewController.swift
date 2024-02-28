@@ -19,7 +19,6 @@ class SettingsViewController : UIViewController {
     var isExpanded = false // Button
     var isSwitch = false
     var expandedIndexPath: IndexPath?
-    var isExpandedCell = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +69,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return accounts.count
         case 1:
-            if isExpandedCell && expandedIndexPath?.section == 1 {
+            if isExpanded && expandedIndexPath?.section == 1 {
                 return moreFeatures.count + 1
             } else {
                 return moreFeatures.count
@@ -134,7 +133,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.contentView.backgroundColor = .white
         cell.settingsTitles.text = headers[section]
         
-        if section == 1 && isExpandedCell {
+        if section == 1 && isExpanded {
             let expandLabel = UILabel(frame: CGRect(x: 10, y: 30, width: 100, height: 20))
             expandLabel.font = UIFont.systemFont(ofSize: 15)
             expandLabel.textColor = .black
