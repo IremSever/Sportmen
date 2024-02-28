@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,6 +46,7 @@
                         </state>
                     </button>
                 </subviews>
+                <color key="backgroundColor" name="settingsBgColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="FVY-ra-76U" secondAttribute="bottom" constant="15" id="AVG-aj-pSF"/>
                     <constraint firstAttribute="bottom" secondItem="Mts-0I-PEi" secondAttribute="bottom" constant="2" id="C5n-oL-SgJ"/>
@@ -69,5 +71,8 @@
     </objects>
     <resources>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="123"/>
+        <namedColor name="settingsBgColor">
+            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

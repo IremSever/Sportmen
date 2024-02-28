@@ -37,8 +37,8 @@ class NewsViewController: UIViewController {
     }
     
     func navigationBarDesign() {
-        let imageView = UIImageView(image: UIImage(named: "icon_mainmenu"))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imageView)
+        let imgAppIcon = UIImageView(image: UIImage(named: "icon_mainmenu"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imgAppIcon)
         
         let buttonModifyList = UIButton(type: .custom)
         buttonModifyList.setImage(UIImage(named: "modifylist"), for: .normal)

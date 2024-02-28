@@ -18,6 +18,8 @@ class MyTeamViewController : UIViewController, UITableViewDelegate, UITableViewD
         self.myTeamTableView.dataSource = self
         self.myTeamTableView.delegate = self
         loadMyTeamData()
+        
+        navigationBarDesign()
     }
     
     private func loadMyTeamData() {
@@ -50,5 +52,24 @@ class MyTeamViewController : UIViewController, UITableViewDelegate, UITableViewD
             myTeamDetailVC.selectedMyTeam = myTeam
             navigationController?.pushViewController(myTeamDetailVC, animated: true)
         }
+    }
+    
+    func navigationBarDesign() {
+        let imgAppIcon = UIImageView(image: UIImage(named: "icon_mainmenu"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imgAppIcon)
+        
+        let buttonChangeTeam = UIButton(type: .custom)
+        buttonChangeTeam.setImage(UIImage(named: "changeteams"), for: .normal)
+        buttonChangeTeam.contentMode = .scaleAspectFit
+        buttonChangeTeam.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        buttonChangeTeam.addTarget(self, action: #selector(buttonChangeTeamTapped), for: .touchUpInside)
+        let changeTeamBarButton = UIBarButtonItem(customView: buttonChangeTeam)
+        
+        navigationItem.rightBarButtonItem = changeTeamBarButton
+    }
+    
+    @objc func buttonChangeTeamTapped() {
+        
+        myTeamTableView.reloadData()
     }
 }

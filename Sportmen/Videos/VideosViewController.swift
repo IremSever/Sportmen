@@ -17,6 +17,8 @@ class VideosViewController : UIViewController {
         self.videosTableView.dataSource = self
         self.videosTableView.delegate = self
         loadVideoData()
+        
+        navigationBarDesign()
     }
     private func loadVideoData() {
         videoViewModel.fetchVideosData { [weak self] result in
@@ -32,6 +34,17 @@ class VideosViewController : UIViewController {
             videosDetailVC.selectedVideos = videos
             navigationController?.pushViewController(videosDetailVC, animated: true)
         }
+    }
+    
+    func navigationBarDesign() {
+        let imgAppIcon = UIImageView(image: UIImage(named: "icon_mainmenu"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imgAppIcon)
+        
+        let lblTitleCategory = "Videos"
+            
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: lblTitleCategory)
+        
+        videosTableView.reloadData()
     }
 }
 
