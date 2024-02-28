@@ -77,8 +77,8 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
             return 290
         } else {
             let screenHeight = UIScreen.main.bounds.height
-            let remainingHeight = screenHeight - 290
-            let cell2Height = remainingHeight / 3
+            let remainingHeight = screenHeight - 310
+            let cell2Height = remainingHeight / 4
             return cell2Height
         }
     }
