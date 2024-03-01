@@ -47,23 +47,17 @@ class SettingsViewController : UIViewController {
         settingsTableView.reloadData()
     }
     
+    // Handle size changes
     func changeFontSize(_ newSize: Float) {
-        // Implement font size changes here using 'newSize' parameter
         let newFontSize = CGFloat(newSize)
         let newFont = UIFont.systemFont(ofSize: newFontSize)
         UILabel.appearance().font = newFont
-        
-        
     }
-    
+
     // Handle font changes
     func changeFont(_ newFont: UIFont) {
-        // Implement font changes here using 'newFont' parameter
-        // For example, change all labels to the new font
         UILabel.appearance().font = newFont
     }
-    
-    
 }
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -91,21 +85,16 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 1 && indexPath.row == moreFeatures.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandedTableViewCell", for: indexPath) as! ExpandedTableViewCell
+            
             // Handle font size changes
             cell.fontSizeChangeHandler = { [weak self] size in
-                // Implement font size changes here using 'size' parameter
-                // For example:
-                // self?.changeFontSize(size)
                 if let strongSelf = self {
                     strongSelf.changeFontSize(size)
                 }
             }
             
-            // Handle font changes
+            // Handle font size changes
             cell.fontChangeHandler = { [weak self] font in
-                // Implement font changes here using 'font' parameter
-                // For example:
-                // self?.changeFont(font)
                 if let strongSelf = self {
                     strongSelf.changeFont(font)
                 }
