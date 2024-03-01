@@ -19,13 +19,14 @@ class SettingsViewController : UIViewController {
     var isExpanded = false // Button
     var isSwitch = false
     var isExpandedCell = false
+    var isChangeTextSize = false
+    var isChangeTextStyle = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.sectionHeaderTopPadding = 0
         registerTableCells()
         navigationBarDesign()
-        updateAllFonts()
     }
     
     func registerTableCells() {
@@ -46,28 +47,23 @@ class SettingsViewController : UIViewController {
         settingsTableView.reloadData()
     }
     
-    func updateFontsRecursively(view: UIView) {
-        for subview in view.subviews {
-            if let label = subview as? UILabel {
-                label.font = UIFont.getAppFont()
-                label.textColor = .label
-            } else if let button = subview as? UIButton {
-                button.titleLabel?.font = UIFont.getAppFont()
-                button.setTitleColor(.label, for: .normal)
-            } else if let textField = subview as? UITextField {
-                textField.font = UIFont.getAppFont()
-                textField.textColor = .label
-            } else if let textView = subview as? UITextView {
-                textView.font = UIFont.getAppFont()
-                textView.textColor = .label
-            }
-            updateFontsRecursively(view: subview)
-        }
+    func changeFontSize(_ newSize: Float) {
+        // Implement font size changes here using 'newSize' parameter
+        let newFontSize = CGFloat(newSize)
+        let newFont = UIFont.systemFont(ofSize: newFontSize)
+        UILabel.appearance().font = newFont
+        
+        
     }
     
-    func updateAllFonts() {
-        updateFontsRecursively(view: view)
+    // Handle font changes
+    func changeFont(_ newFont: UIFont) {
+        // Implement font changes here using 'newFont' parameter
+        // For example, change all labels to the new font
+        UILabel.appearance().font = newFont
     }
+    
+    
 }
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -95,6 +91,26 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 1 && indexPath.row == moreFeatures.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandedTableViewCell", for: indexPath) as! ExpandedTableViewCell
+            // Handle font size changes
+            cell.fontSizeChangeHandler = { [weak self] size in
+                // Implement font size changes here using 'size' parameter
+                // For example:
+                // self?.changeFontSize(size)
+                if let strongSelf = self {
+                    strongSelf.changeFontSize(size)
+                }
+            }
+            
+            // Handle font changes
+            cell.fontChangeHandler = { [weak self] font in
+                // Implement font changes here using 'font' parameter
+                // For example:
+                // self?.changeFont(font)
+                if let strongSelf = self {
+                    strongSelf.changeFont(font)
+                }
+            }
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StandartTableViewCell", for: indexPath) as! StandartTableViewCell
@@ -126,6 +142,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             
+            // Dark mode changes
             cell.switchHandler = { [weak self] isDarkMode in
                 if isDarkMode {
                     // UserSettings.shared.setSelectedUserInterfaceStyle(with: “dark”)
