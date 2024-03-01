@@ -13,6 +13,9 @@ class ExpandedTableViewCell: UITableViewCell {
     @IBOutlet weak var buttonFontFutura: UIButton!
     @IBOutlet weak var textSlider: UISlider!
     
+    var fontSize: Float = 10.0 // Default font size
+    let fontSizeStep: Float = 0.25
+    
     var fontChangeHandler: ((UIFont) -> Void)?
     var fontSizeChangeHandler: ((Float) -> Void)?
     
@@ -28,20 +31,20 @@ class ExpandedTableViewCell: UITableViewCell {
     }
     
     @objc func sliderValueChanged(_ sender: UISlider) {
-        fontSizeChangeHandler?(sender.value)
+        // Calculate new font size based on slider value
+        let newFontSize = CGFloat(sender.value)
+        fontChangeHandler?(UIFont.systemFont(ofSize: newFontSize))
     }
     
     // Change the size accordingly
     @objc func georgiaButtonTapped() {
-        if let fontChangeHandler = fontChangeHandler {
-            fontChangeHandler(UIFont(name: "Georgia", size: 17.0)!)
-        }
+        fontSize += fontSizeStep // Increase font size by step
+        fontChangeHandler?(UIFont(name: "Georgia", size: CGFloat(fontSize)) ?? UIFont.systemFont(ofSize: CGFloat(fontSize)))
     }
     
     // Change the size accordingly
     @objc func futuraButtonTapped() {
-        if let fontChangeHandler = fontChangeHandler {
-            fontChangeHandler(UIFont(name: "Futura", size: 17.0)!)
-        }
+        fontSize += fontSizeStep // Increase font size by step
+        fontChangeHandler?(UIFont(name: "Futura", size: CGFloat(fontSize)) ?? UIFont.systemFont(ofSize: CGFloat(fontSize)))
     }
 }
