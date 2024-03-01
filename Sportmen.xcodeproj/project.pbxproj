@@ -10,6 +10,8 @@
 		6135ED782B887CE900ED5B3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED772B887CE900ED5B3B /* SettingsViewController.swift */; };
 		6135ED7D2B88886300ED5B3B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */; };
 		6135ED7E2B88886300ED5B3B /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */; };
+		614054962B90642200325F46 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614054952B90642200325F46 /* ExploreViewController.swift */; };
+		614054982B90664F00325F46 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614054972B90664F00325F46 /* ColorSet.swift */; };
 		614107A12B8DB7340062AFBF /* MyTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614107A02B8DB7340062AFBF /* MyTeamViewController.swift */; };
 		614107A62B8DB83E0062AFBF /* MyTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614107A52B8DB83E0062AFBF /* MyTeamViewModel.swift */; };
 		614107A92B8DBF2C0062AFBF /* MyTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614107A72B8DBF2C0062AFBF /* MyTeamTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		6135ED772B887CE900ED5B3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6135ED7B2B88886300ED5B3B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		6135ED7C2B88886300ED5B3B /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		614054952B90642200325F46 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		614054972B90664F00325F46 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 		614107A02B8DB7340062AFBF /* MyTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewController.swift; sourceTree = "<group>"; };
 		614107A52B8DB83E0062AFBF /* MyTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamViewModel.swift; sourceTree = "<group>"; };
 		614107A72B8DBF2C0062AFBF /* MyTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamTableViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		614054942B90640900325F46 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				614054952B90642200325F46 /* ExploreViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		614107AB2B8DBF380062AFBF /* MyTeamTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,8 @@
 		66CF92452B74B2E60000C207 /* Sportmen */ = {
 			isa = PBXGroup;
 			children = (
+				614054972B90664F00325F46 /* ColorSet.swift */,
+				614054942B90640900325F46 /* Explore */,
 				614107BF2B8DFA530062AFBF /* ChooseTeam */,
 				614107B92B8DF92B0062AFBF /* News */,
 				614107BA2B8DF9350062AFBF /* Videos */,
@@ -359,6 +373,7 @@
 				66FF4B132B7E3B1200C1DBED /* VideosViewModel.swift in Sources */,
 				614107A12B8DB7340062AFBF /* MyTeamViewController.swift in Sources */,
 				66FF4B112B7E3A4200C1DBED /* VideosWebService.swift in Sources */,
+				614054982B90664F00325F46 /* ColorSet.swift in Sources */,
 				61D1BA752B83881600314738 /* VideosDetailVC.swift in Sources */,
 				614107A62B8DB83E0062AFBF /* MyTeamViewModel.swift in Sources */,
 				66CF924B2B74B2E60000C207 /* ViewController.swift in Sources */,
@@ -374,6 +389,7 @@
 				61D1BA6B2B8306CB00314738 /* NewsDetailVC.swift in Sources */,
 				6135ED782B887CE900ED5B3B /* SettingsViewController.swift in Sources */,
 				66CF92472B74B2E60000C207 /* AppDelegate.swift in Sources */,
+				614054962B90642200325F46 /* ExploreViewController.swift in Sources */,
 				66CF92712B763B630000C207 /* NewsViewModel.swift in Sources */,
 				66CF926D2B75FEDE0000C207 /* News.swift in Sources */,
 				66CF92492B74B2E60000C207 /* SceneDelegate.swift in Sources */,

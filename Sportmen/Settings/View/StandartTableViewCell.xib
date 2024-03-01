@@ -47,6 +47,7 @@
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="settingsBgColor"/>
+                <color key="tintColor" name="settingsBgColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="FVY-ra-76U" secondAttribute="bottom" constant="15" id="AVG-aj-pSF"/>
                     <constraint firstAttribute="bottom" secondItem="Mts-0I-PEi" secondAttribute="bottom" constant="2" id="C5n-oL-SgJ"/>

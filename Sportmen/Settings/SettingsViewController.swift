@@ -25,8 +25,7 @@ class SettingsViewController : UIViewController {
         settingsTableView.sectionHeaderTopPadding = 0
         registerTableCells()
         navigationBarDesign()
-        
-        
+        updateAllFonts()
     }
     
     func registerTableCells() {
@@ -35,19 +34,6 @@ class SettingsViewController : UIViewController {
         settingsTableView.register(UINib(nibName: "ExpandedTableViewCell", bundle: nil), forCellReuseIdentifier: "ExpandedTableViewCell")
     }
     
-    func enableDarkMode() {
-        self.settingsTableView.backgroundColor = .black
-        self.view.backgroundColor = .black
-        self.tabBarController?.tabBar.barTintColor = .black
-        self.navigationController?.navigationBar.barTintColor = .black
-    }
-    
-    func disableDarkMode() {
-        self.settingsTableView.backgroundColor = .white
-        self.view.backgroundColor = .white
-        self.tabBarController?.tabBar.barTintColor = .white
-        self.navigationController?.navigationBar.barTintColor = .white
-    }
     
     func navigationBarDesign() {
         let imgAppIcon = UIImageView(image: UIImage(named: "icon_mainmenu"))
@@ -60,6 +46,28 @@ class SettingsViewController : UIViewController {
         settingsTableView.reloadData()
     }
     
+    func updateFontsRecursively(view: UIView) {
+        for subview in view.subviews {
+            if let label = subview as? UILabel {
+                label.font = UIFont.getAppFont()
+                label.textColor = .label
+            } else if let button = subview as? UIButton {
+                button.titleLabel?.font = UIFont.getAppFont()
+                button.setTitleColor(.label, for: .normal)
+            } else if let textField = subview as? UITextField {
+                textField.font = UIFont.getAppFont()
+                textField.textColor = .label
+            } else if let textView = subview as? UITextView {
+                textView.font = UIFont.getAppFont()
+                textView.textColor = .label
+            }
+            updateFontsRecursively(view: subview)
+        }
+    }
+    
+    func updateAllFonts() {
+        updateFontsRecursively(view: view)
+    }
 }
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -120,9 +128,15 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             
             cell.switchHandler = { [weak self] isDarkMode in
                 if isDarkMode {
-                    self?.enableDarkMode()
+                    // UserSettings.shared.setSelectedUserInterfaceStyle(with: “dark”)
+                    if #available(iOS 13.0, *) {
+                        UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .dark
+                    }
                 } else {
-                    self?.disableDarkMode()
+                    // UserSettings.shared.setSelectedUserInterfaceStyle(with: “light”)
+                    if #available(iOS 13.0, *) {
+                        UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+                    }
                 }
             }
             return cell
@@ -132,8 +146,8 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell") as! HeaderTableViewCell
         cell.settingsTitles.font = UIFont.boldSystemFont(ofSize: 20)
-        cell.backgroundColor = .white
-        cell.contentView.backgroundColor = .white
+        cell.backgroundColor = .settingsBg
+        cell.contentView.backgroundColor = .settingsBg
         cell.settingsTitles.text = headers[section]
         
         if section == 1 && isExpanded {

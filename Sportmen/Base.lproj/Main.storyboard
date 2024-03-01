@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -37,7 +38,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                     </view>
                     <connections>
                         <segue destination="d6W-kh-oXA" kind="presentation" identifier="toFeedVC" modalPresentationStyle="fullScreen" id="u5B-oG-TuG"/>
@@ -57,7 +58,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O3N-US-zdw">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
+                                <color key="separatorColor" name="settingsBgColor"/>
+                                <color key="sectionIndexBackgroundColor" name="settingsBgColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videosCell" rowHeight="355" id="v2R-eG-9x8" customClass="VideosTableViewCell" customModule="Sportmen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="355"/>
@@ -87,7 +90,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="tintColor" red="0.33333334329999997" green="0.63921570780000003" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" name="settingsBgColor"/>
                                             <constraints>
                                                 <constraint firstItem="4c7-wv-ZuO" firstAttribute="top" secondItem="4zG-31-dMQ" secondAttribute="bottom" constant="5" id="30D-JH-Acx"/>
                                                 <constraint firstAttribute="trailing" secondItem="euI-mm-i5g" secondAttribute="trailing" constant="8" id="Cz1-ah-bWC"/>
@@ -102,6 +105,7 @@
                                                 <constraint firstItem="4zG-31-dMQ" firstAttribute="leading" secondItem="0YI-BN-HYa" secondAttribute="leadingMargin" id="tQg-1t-BIL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="settingsBgColor"/>
                                         <connections>
                                             <outlet property="publishedDateLabel" destination="4zG-31-dMQ" id="O19-Z0-r2j"/>
                                             <outlet property="videoImageView" destination="euI-mm-i5g" id="gd9-24-Det"/>
@@ -209,7 +213,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K2z-V2-gco"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                         <constraints>
                             <constraint firstItem="K2z-V2-gco" firstAttribute="trailing" secondItem="Jno-wU-8LI" secondAttribute="trailing" constant="16.670000000000002" id="3GX-h9-SbK"/>
                             <constraint firstItem="jkB-D4-ZeP" firstAttribute="top" secondItem="cM2-9q-fzQ" secondAttribute="bottom" constant="8" symbolic="YES" id="9Sh-XB-NnD"/>
@@ -263,7 +267,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-G8-kmC">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
+                                <color key="separatorColor" name="settingsBgColor"/>
+                                <color key="sectionIndexBackgroundColor" name="settingsBgColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="290" id="i1U-Xr-bEJ" customClass="NewsTableViewCell1" customModule="Sportmen" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="290"/>
@@ -288,6 +294,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" name="settingsBgColor"/>
                                             <constraints>
                                                 <constraint firstItem="Lbg-Dv-Pkr" firstAttribute="leading" secondItem="bkK-9P-0YK" secondAttribute="leadingMargin" constant="2" id="91r-z7-YcE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Lbg-Dv-Pkr" secondAttribute="bottom" constant="28" id="Ho2-yp-OpO"/>
@@ -301,6 +308,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="EsP-wf-uqS" secondAttribute="trailing" constant="10" id="z21-6q-hB7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="settingsBgColor"/>
                                         <connections>
                                             <outlet property="newsImgCell1" destination="EsP-wf-uqS" id="hee-gT-zf6"/>
                                             <outlet property="newsSourceCell1" destination="cv3-lG-gPq" id="dSg-s9-stI"/>
@@ -360,6 +368,7 @@
                                                 <constraint firstItem="Xp5-Rr-iqe" firstAttribute="top" secondItem="dw5-ah-SEy" secondAttribute="top" constant="14" id="qGz-bA-vYE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="settingsBgColor"/>
                                         <connections>
                                             <outlet property="newsImgCell2" destination="Xp5-Rr-iqe" id="0aT-r4-g6I"/>
                                             <outlet property="newsPublishedDateCell2" destination="lyt-GK-Rab" id="dSi-Qh-aEh"/>
@@ -371,7 +380,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="shb-NH-0cB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                         <constraints>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="leading" secondItem="shb-NH-0cB" secondAttribute="leading" id="AI5-4J-Zz7"/>
                             <constraint firstItem="zpo-G8-kmC" firstAttribute="top" secondItem="shb-NH-0cB" secondAttribute="top" constant="-44" id="Sj9-b6-Nlr"/>
@@ -440,7 +449,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KNK-rv-qj8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                         <constraints>
                             <constraint firstItem="guU-4q-020" firstAttribute="top" secondItem="mSg-gd-Fou" secondAttribute="top" id="4fC-2g-ZSi"/>
                             <constraint firstItem="KNK-rv-qj8" firstAttribute="trailing" secondItem="RgP-c5-wlm" secondAttribute="trailing" constant="16" id="68l-tu-FHa"/>
@@ -480,7 +489,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="75F-Ub-k4d">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="barTintColor" name="settingsBgColor"/>
+                        <color key="selectedImageTintColor" red="0.33333334329999997" green="0.63921570780000003" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="kAh-Lq-uQe" kind="relationship" relationship="viewControllers" id="6G1-Gt-ACf"/>
@@ -505,6 +516,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lNT-8V-nkZ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" name="settingsBgColor"/>
+                                <color key="separatorColor" name="settingsBgColor"/>
+                                <color key="sectionIndexBackgroundColor" name="settingsBgColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="1Oy-Vo-SGY" id="qOn-dg-Bep"/>
                                     <outlet property="delegate" destination="1Oy-Vo-SGY" id="odx-rR-xIk"/>
@@ -529,21 +542,38 @@
             </objects>
             <point key="canvasLocation" x="1658.7786259541983" y="2352.816901408451"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore View Controller-->
         <scene sceneID="GtQ-lQ-oSW">
             <objects>
-                <viewController id="0Ik-b4-5hK" sceneMemberID="viewController">
+                <viewController id="0Ik-b4-5hK" customClass="ExploreViewController" customModule="Sportmen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l4q-CN-Q0g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="05H-pT-7sK">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
+                                <color key="separatorColor" name="settingsBgColor"/>
+                                <color key="sectionIndexBackgroundColor" name="settingsBgColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hSd-lJ-htU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <constraints>
+                            <constraint firstItem="05H-pT-7sK" firstAttribute="top" secondItem="hSd-lJ-htU" secondAttribute="top" constant="-44" id="43l-xn-MPc"/>
+                            <constraint firstItem="hSd-lJ-htU" firstAttribute="bottom" secondItem="05H-pT-7sK" secondAttribute="bottom" constant="-49" id="9it-ao-9cC"/>
+                            <constraint firstItem="05H-pT-7sK" firstAttribute="trailing" secondItem="hSd-lJ-htU" secondAttribute="trailing" id="k6S-SU-tgL"/>
+                            <constraint firstItem="05H-pT-7sK" firstAttribute="leading" secondItem="hSd-lJ-htU" secondAttribute="leading" id="mog-hS-4lg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hkI-sm-gG1"/>
+                    <connections>
+                        <outlet property="exploreTableView" destination="05H-pT-7sK" id="KfG-4R-6XW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7w-j8-4xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="1696"/>
+            <point key="canvasLocation" x="1658.7786259541983" y="1695.7746478873241"/>
         </scene>
         <!--My Team View Controller-->
         <scene sceneID="7rK-lQ-GSx">
@@ -555,11 +585,13 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-ni-RAb">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
+                                <color key="separatorColor" name="settingsBgColor"/>
+                                <color key="sectionIndexBackgroundColor" name="settingsBgColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sPh-a5-9Ke"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SXJ-ni-RAb" firstAttribute="top" secondItem="sPh-a5-9Ke" secondAttribute="top" constant="-44" id="0T4-GH-mng"/>
@@ -592,7 +624,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="3ZY-4I-556"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="e9z-1Z-p8N"/>
                 </viewController>
@@ -604,7 +636,9 @@
         <scene sceneID="Cwg-rG-FWU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kAh-Lq-uQe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="ppc-dR-Tzx"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="ppc-dR-Tzx">
+                        <color key="badgeColor" name="settingsBgColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3eV-42-s9d">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
@@ -623,11 +657,15 @@
         <scene sceneID="7ZI-pX-UMX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jJt-gj-mxI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Videos" image="play" catalog="system" id="yXu-rl-Lhe"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="play" catalog="system" id="yXu-rl-Lhe">
+                        <color key="badgeColor" name="settingsBgColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mij-j8-wf7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="barTintColor" name="settingsBgColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -642,11 +680,18 @@
         <scene sceneID="Bex-Y0-QfO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lfk-91-56j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyTeam" image="photo.circle" catalog="system" id="DHA-jq-LqM"/>
+                    <tabBarItem key="tabBarItem" title="MyTeam" image="photo.circle" catalog="system" id="DHA-jq-LqM">
+                        <color key="badgeColor" name="settingsBgColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HdX-hv-B5X">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="barTintColor" name="settingsBgColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="settingsBgColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -661,11 +706,15 @@
         <scene sceneID="Sid-nj-GBU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XgX-4W-Vhz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="aT0-n1-s9p"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="aT0-n1-s9p">
+                        <color key="badgeColor" name="settingsBgColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dn-uI-f3u">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="barTintColor" name="settingsBgColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -680,11 +729,14 @@
         <scene sceneID="myA-R9-dLT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qi9-jO-KD5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="text.magnifyingglass" catalog="system" id="BCi-Ew-wqN"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="text.magnifyingglass" catalog="system" id="BCi-Ew-wqN">
+                        <color key="badgeColor" name="settingsBgColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y2P-uC-moG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="settingsBgColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -704,7 +756,7 @@
         <image name="play" catalog="system" width="117" height="128"/>
         <image name="text.magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="settingsBgColor">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

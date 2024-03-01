@@ -41,7 +41,6 @@ class VideosViewController : UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imgAppIcon)
         
         let lblTitleCategory = "Videos"
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: lblTitleCategory)
         
         videosTableView.reloadData()

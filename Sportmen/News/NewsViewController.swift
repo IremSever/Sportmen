@@ -45,6 +45,7 @@ class NewsViewController: UIViewController {
         buttonModifyList.contentMode = .scaleAspectFit
         buttonModifyList.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         buttonModifyList.addTarget(self, action: #selector(buttonModifyListTapped), for: .touchUpInside)
+      
         let modifyListBarButton = UIBarButtonItem(customView: buttonModifyList)
         
         let buttonMomentNews = UIButton(type: .custom)
@@ -56,6 +57,7 @@ class NewsViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [modifyListBarButton, momentNewsBarButton]
         
+        navigationController?.navigationBar.barTintColor = .settingsBg 
         newsTableView.reloadData()
     }
     

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -50,6 +51,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="tintColor" name="settingsBgColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="225.66999999999999" id="Opx-Nr-FiK"/>
                             <constraint firstAttribute="height" constant="31.329999999999998" id="mpr-PC-YLB"/>
@@ -60,41 +63,50 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNJ-m5-tl6">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="jEA-0S-Xl9"/>
                                     <constraint firstAttribute="width" constant="85" id="ujN-GP-7iQ"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="settingsBgColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Futura" cornerStyle="large">
+                                <buttonConfiguration key="configuration" style="filled" title="Futura" cornerStyle="large" titleAlignment="center">
                                     <backgroundConfiguration key="background" strokeWidth="2">
+                                        <color key="backgroundColor" name="settingsBgColor"/>
                                         <color key="strokeColor" systemColor="systemGreenColor"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" red="0.33333334329999997" green="0.63921570780000003" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseBackgroundColor" name="settingsBgColor"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-4g-jxb">
                                 <rect key="frame" x="115" y="0.0" width="85" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="settingsBgColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="YmC-YJ-RGc"/>
                                     <constraint firstAttribute="height" constant="34" id="xsQ-OC-AZk"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="settingsBgColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Georgia" cornerStyle="large">
+                                <buttonConfiguration key="configuration" style="filled" title="Georgia" cornerStyle="large" titleAlignment="center">
                                     <backgroundConfiguration key="background" strokeWidth="2">
+                                        <color key="backgroundColor" name="settingsBgColor"/>
                                         <color key="strokeColor" systemColor="systemGreenColor"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" red="0.33333334329999997" green="0.63921570780000003" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" name="settingsBgColor"/>
+                        <color key="tintColor" name="settingsBgColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="EMZ-KT-726"/>
                             <constraint firstAttribute="height" constant="34" id="P6n-j4-onO"/>
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="settingsBgColor"/>
+                <color key="tintColor" name="settingsBgColor"/>
                 <constraints>
                     <constraint firstItem="vTt-bh-Sxc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="1mN-VC-EAR"/>
                     <constraint firstItem="34K-sk-CIe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="Kpa-kR-KSi"/>
