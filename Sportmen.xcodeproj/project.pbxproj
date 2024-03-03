@@ -230,13 +230,18 @@
 			path = NewsDetailVC;
 			sourceTree = "<group>";
 		};
-		666F83D82B7B42CC007DF20C /* Delegate */ = {
+		61DA82972B94B1F300923753 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				614054972B90664F00325F46 /* ColorSet.swift */,
 				66CF92462B74B2E60000C207 /* AppDelegate.swift */,
 				66CF92482B74B2E60000C207 /* SceneDelegate.swift */,
+				66CF924C2B74B2E60000C207 /* Main.storyboard */,
+				66CF924F2B74B2E80000C207 /* Assets.xcassets */,
+				66CF92512B74B2E80000C207 /* LaunchScreen.storyboard */,
+				66CF92542B74B2E80000C207 /* Info.plist */,
 			);
-			path = Delegate;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		66CF923A2B74B2E60000C207 = {
@@ -258,18 +263,13 @@
 		66CF92452B74B2E60000C207 /* Sportmen */ = {
 			isa = PBXGroup;
 			children = (
-				614054972B90664F00325F46 /* ColorSet.swift */,
+				61DA82972B94B1F300923753 /* Support */,
 				614054942B90640900325F46 /* Explore */,
 				614107BF2B8DFA530062AFBF /* ChooseTeam */,
 				614107B92B8DF92B0062AFBF /* News */,
 				614107BA2B8DF9350062AFBF /* Videos */,
 				614107B82B8DF9220062AFBF /* MyTeam */,
 				614107B72B8DF9150062AFBF /* Settings */,
-				666F83D82B7B42CC007DF20C /* Delegate */,
-				66CF924C2B74B2E60000C207 /* Main.storyboard */,
-				66CF924F2B74B2E80000C207 /* Assets.xcassets */,
-				66CF92512B74B2E80000C207 /* LaunchScreen.storyboard */,
-				66CF92542B74B2E80000C207 /* Info.plist */,
 			);
 			path = Sportmen;
 			sourceTree = "<group>";
@@ -547,7 +547,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sportmen/Info.plist;
+				INFOPLIST_FILE = Sportmen/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -581,7 +581,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sportmen/Info.plist;
+				INFOPLIST_FILE = Sportmen/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
