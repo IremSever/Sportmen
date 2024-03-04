@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
-    
     static let idendifier = "Top5TableViewCell"
-    private var collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private var collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    var exploreDataArray: [ExploreDataClass] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,28 +25,38 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     func createExploreCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: screenWidth * 0.3, height: screenWidth * 0.45)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.width * 0.45)
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 5
         collectionViewTop5 = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
-        collectionViewTop5.register(Top5CollectionViewCell.self, forCellWithReuseIdentifier: Top5CollectionViewCell.identifierTop5 )
+        collectionViewTop5.register(Top5CollectionViewCell.self, forCellWithReuseIdentifier: Top5CollectionViewCell.identifierTop5)
         collectionViewTop5.delegate = self
         collectionViewTop5.dataSource = self
+        collectionViewTop5.showsHorizontalScrollIndicator = false
         contentView.addSubview(collectionViewTop5)
         collectionViewTop5.snp.makeConstraints{ make in
-            make.top.equalTo(contentView.snp.top)
-            make.right.equalTo(contentView.snp.right)
-            make.left.equalTo(contentView.snp.left)
-            make.bottom.equalTo(contentView.snp.bottom)
+            make.edges.equalToSuperview()
         }
     }
+    
+    func updateDataArray(with newDataArray: [ExploreDataClass]) {
+        exploreDataArray = newDataArray
+        collectionViewTop5.reloadData()
+    }
 }
+
 extension Top5TableViewCell {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return exploreDataArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Top5CollectionViewCell.identifierTop5, for: indexPath)
-        cell.backgroundColor = .systemGreen
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Top5CollectionViewCell.identifierTop5, for: indexPath) as? Top5CollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.backgroundColor = .clear
+        let exploreData = exploreDataArray[indexPath.item]
+        cell.configure(with: exploreData)
         return cell
     }
 }

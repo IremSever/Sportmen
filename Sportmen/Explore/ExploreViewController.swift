@@ -9,24 +9,19 @@ import Foundation
 import UIKit
 import SnapKit
 
-class ExploreViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExploreViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     @IBOutlet weak var exploreTableView: UITableView!
     var exploreViewModel = ExploreViewModel()
-    
     private var searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.exploreTableView.dataSource = self
-        self.exploreTableView.delegate = self
-        self.exploreTableView.register(Top5TableViewCell.self, forCellReuseIdentifier: Top5TableViewCell.idendifier)
+        exploreTableView.dataSource = self
+        exploreTableView.delegate = self
+        exploreTableView.register(Top5TableViewCell.self, forCellReuseIdentifier: Top5TableViewCell.idendifier)
         loadExploreData()
-        view.addSubview(exploreTableView)
-        exploreTableView.snp.makeConstraints{ make in
-            make.top.left.right.bottom.equalToSuperview()
-        }
-        navigationBarDesign()
         setupSearchController()
+        navigationBarDesign()
     }
     
     private func loadExploreData() {
@@ -43,41 +38,41 @@ class ExploreViewController : UIViewController, UITableViewDataSource, UITableVi
         
         let lblTitleCategory = "Explore"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: lblTitleCategory, style: .plain, target: nil, action: nil)
-        
-        exploreTableView.reloadData()
     }
     
     private func setupSearchController() {
-        self.searchController.searchResultsUpdater = self
-        self.searchController.obscuresBackgroundDuringPresentation = false
-        self.searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Explore"
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Explore"
         
-        self.navigationItem.searchController = searchController
-        self.definesPresentationContext = false
-        self.navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = false
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
-}
-
-extension ExploreViewController {
+    
+    // MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return exploreViewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = exploreTableView.dequeueReusableCell(withIdentifier: Top5TableViewCell.idendifier, for: indexPath) as! Top5TableViewCell
+        let exploreData = exploreViewModel.cellForRowAt(indexPath: indexPath)
+        cell.updateDataArray(with: [exploreData])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-}
-
-extension ExploreViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        //exploreViewModel.filterContentForSearchText(searchBar.text)
+    
+    // MARK: - Search Controller
+    @objc(updateSearchResultsForSearchController:) func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text ?? ""
+        exploreViewModel.upSearchController(searchBarText: searchText)
         exploreTableView.reloadData()
     }
 }
+
+
