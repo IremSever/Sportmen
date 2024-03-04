@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ExploreTableViewCell" rowHeight="170" id="A8o-Yh-gLx" customClass="ExploreNewsViewCell" customModule="Sportmen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A8o-Yh-gLx" id="bwm-gS-Chp">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7im-Wd-8pm">
+                        <rect key="frame" x="156" y="15" width="138" height="12"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zac-0X-dIG">
+                        <rect key="frame" x="300" y="15" width="73" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="73" id="h5v-8M-XR0"/>
+                            <constraint firstAttribute="height" constant="11" id="ipn-T0-5gP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Css-TA-Hos">
+                        <rect key="frame" x="156" y="38" width="223" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="li6-0n-Jre"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3M-yD-Kod">
+                        <rect key="frame" x="8" y="14" width="142" height="142"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="142" id="DSw-8W-nyy"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="settingsBgColor"/>
+                <constraints>
+                    <constraint firstItem="Zac-0X-dIG" firstAttribute="top" secondItem="bwm-gS-Chp" secondAttribute="topMargin" constant="4" id="0Cf-rc-6Xt"/>
+                    <constraint firstItem="7im-Wd-8pm" firstAttribute="top" secondItem="bwm-gS-Chp" secondAttribute="topMargin" constant="4" id="6Q1-7V-oQs"/>
+                    <constraint firstItem="7im-Wd-8pm" firstAttribute="leading" secondItem="i3M-yD-Kod" secondAttribute="trailing" constant="6" id="ChF-zx-hyj"/>
+                    <constraint firstItem="Zac-0X-dIG" firstAttribute="leading" secondItem="7im-Wd-8pm" secondAttribute="trailing" constant="6" id="K79-ja-rgl"/>
+                    <constraint firstItem="Css-TA-Hos" firstAttribute="leading" secondItem="i3M-yD-Kod" secondAttribute="trailing" constant="6" id="LBz-iv-Un0"/>
+                    <constraint firstItem="i3M-yD-Kod" firstAttribute="leading" secondItem="bwm-gS-Chp" secondAttribute="leading" constant="8" id="Lpx-VC-X8w"/>
+                    <constraint firstItem="Css-TA-Hos" firstAttribute="trailing" secondItem="bwm-gS-Chp" secondAttribute="trailingMargin" constant="6" id="caU-z9-Gtg"/>
+                    <constraint firstAttribute="bottom" secondItem="i3M-yD-Kod" secondAttribute="bottom" constant="14" id="lPC-NS-GaT"/>
+                    <constraint firstItem="i3M-yD-Kod" firstAttribute="top" secondItem="bwm-gS-Chp" secondAttribute="top" constant="14" id="tu5-xE-WTJ"/>
+                    <constraint firstItem="Zac-0X-dIG" firstAttribute="trailing" secondItem="bwm-gS-Chp" secondAttribute="trailingMargin" id="xj9-Ya-6Uk"/>
+                    <constraint firstItem="Css-TA-Hos" firstAttribute="top" secondItem="Zac-0X-dIG" secondAttribute="bottom" constant="12" id="yMk-yQ-A8t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="settingsBgColor"/>
+            <connections>
+                <outlet property="imgExploreNewsCell" destination="i3M-yD-Kod" id="vcg-wx-Its"/>
+                <outlet property="publishedDateExploreNewsCell" destination="Zac-0X-dIG" id="vli-EV-yUo"/>
+                <outlet property="sourceExploreNewsCell" destination="7im-Wd-8pm" id="GHY-xT-V5Z"/>
+                <outlet property="titleExploreNewsCell" destination="Css-TA-Hos" id="EKy-r3-Stq"/>
+            </connections>
+            <point key="canvasLocation" x="-193" y="-134"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="settingsBgColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

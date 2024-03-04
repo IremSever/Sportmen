@@ -16,7 +16,7 @@ class SettingsViewController : UIViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
     
-    var isExpanded = false // Button
+    var isExpanded = false
     var isSwitch = false
     var isExpandedCell = false
     var isChangeTextSize = false
@@ -53,7 +53,7 @@ class SettingsViewController : UIViewController {
         let newFont = UIFont.systemFont(ofSize: newFontSize)
         UILabel.appearance().font = newFont
     }
-
+    
     // Handle font changes
     func changeFont(_ newFont: UIFont) {
         UILabel.appearance().font = newFont
