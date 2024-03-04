@@ -25,9 +25,9 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     func createExploreCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.width * 0.45)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.40, height: UIScreen.main.bounds.width * 0.55)
         layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 10
         
         collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionViewTop5.register(Top5CollectionViewCell.self, forCellWithReuseIdentifier: Top5CollectionViewCell.identifierTop5)
