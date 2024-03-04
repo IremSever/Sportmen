@@ -13,7 +13,11 @@ class ExploreViewModel {
     private var explores = [ExploreDataClass]()
     private var filteredExplore: [ExploreDataClass] = []
     
-    func fetchExploreData(completion: @escaping() -> ()) {
+    func getExploreData() -> [ExploreDataClass] {
+        return explores
+    }
+    
+    func fetchExploreData(completion: @escaping () -> Void) {
         exploreWebService.getExploreData { [weak self] result in
             switch result {
             case .success(let exploreData):
@@ -24,14 +28,6 @@ class ExploreViewModel {
             }
         }
     }
-    
-    func numberOfRowsInSection(section: Int) -> Int {
-        return explores.count
-    }
-    
-    func cellForRowAt(indexPath: IndexPath) -> ExploreDataClass {
-        return explores[indexPath.row]
-    }
 }
 
 extension ExploreViewModel {
@@ -41,6 +37,7 @@ extension ExploreViewModel {
         
         return isActive && !searchText.isEmpty
     }
+    
     public func upSearchController(searchBarText: String?) {
         guard let searchText = searchBarText?.lowercased(), !searchText.isEmpty else {
             filteredExplore = explores
@@ -48,7 +45,4 @@ extension ExploreViewModel {
         }
         filteredExplore = explores.filter { $0.title?.lowercased().contains(searchText) ?? false }
     }
-    
-  
 }
-

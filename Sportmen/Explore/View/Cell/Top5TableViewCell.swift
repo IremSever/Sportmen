@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 
 class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
-    static let idendifier = "Top5TableViewCell"
-    private var collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    static let identifier = "Top5TableViewCell"
+    private var collectionViewTop5: UICollectionView!
     var exploreDataArray: [ExploreDataClass] = []
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,13 +28,15 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.3, height: UIScreen.main.bounds.width * 0.45)
         layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 5
-        collectionViewTop5 = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
+        
+        collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionViewTop5.register(Top5CollectionViewCell.self, forCellWithReuseIdentifier: Top5CollectionViewCell.identifierTop5)
         collectionViewTop5.delegate = self
         collectionViewTop5.dataSource = self
         collectionViewTop5.showsHorizontalScrollIndicator = false
         contentView.addSubview(collectionViewTop5)
-        collectionViewTop5.snp.makeConstraints{ make in
+        
+        collectionViewTop5.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -43,9 +45,7 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
         exploreDataArray = newDataArray
         collectionViewTop5.reloadData()
     }
-}
-
-extension Top5TableViewCell {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return exploreDataArray.count
     }

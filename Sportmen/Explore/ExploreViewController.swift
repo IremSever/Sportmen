@@ -18,7 +18,7 @@ class ExploreViewController : UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         exploreTableView.dataSource = self
         exploreTableView.delegate = self
-        exploreTableView.register(Top5TableViewCell.self, forCellReuseIdentifier: Top5TableViewCell.idendifier)
+        exploreTableView.register(Top5TableViewCell.self, forCellReuseIdentifier: Top5TableViewCell.identifier)
         loadExploreData()
         setupSearchController()
         navigationBarDesign()
@@ -51,15 +51,13 @@ class ExploreViewController : UIViewController, UITableViewDataSource, UITableVi
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    // MARK: - Table View Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exploreViewModel.numberOfRowsInSection(section: section)
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = exploreTableView.dequeueReusableCell(withIdentifier: Top5TableViewCell.idendifier, for: indexPath) as! Top5TableViewCell
-        let exploreData = exploreViewModel.cellForRowAt(indexPath: indexPath)
-        cell.updateDataArray(with: [exploreData])
+        let cell = exploreTableView.dequeueReusableCell(withIdentifier: Top5TableViewCell.identifier, for: indexPath) as! Top5TableViewCell
+        cell.updateDataArray(with: exploreViewModel.getExploreData())
         return cell
     }
     
@@ -67,12 +65,9 @@ class ExploreViewController : UIViewController, UITableViewDataSource, UITableVi
         return 300
     }
     
-    // MARK: - Search Controller
-    @objc(updateSearchResultsForSearchController:) func updateSearchResults(for searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
         exploreViewModel.upSearchController(searchBarText: searchText)
         exploreTableView.reloadData()
     }
 }
-
-
