@@ -19,10 +19,10 @@ class Top5CollectionViewCell: UICollectionViewCell {
     
     private let titleTop5: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        label.numberOfLines = 0
+        label.textAlignment = .left
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 21, weight: .bold)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -41,7 +41,7 @@ class Top5CollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         imgTop5.frame = contentView.bounds
         titleTop5.frame = CGRect(x: 0, y: imgTop5.frame.maxY, width: contentView.frame.width, height: 30)
-        
+        titleTop5.frame = CGRect(x: 0, y: contentView.frame.height - 60, width: contentView.frame.width, height: 60)
         self.imgTop5.layer.cornerRadius = 20
         self.imgTop5.clipsToBounds = true
         
@@ -72,6 +72,4 @@ class Top5CollectionViewCell: UICollectionViewCell {
         
         titleTop5.text = exploreData?.title
     }
-    
-    
 }

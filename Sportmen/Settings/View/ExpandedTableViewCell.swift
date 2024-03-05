@@ -28,7 +28,19 @@ class ExpandedTableViewCell: UITableViewCell {
       }
       
       @objc func sliderValueChanged(_ sender: UISlider) {
-          fontSizeChangeHandler?(sender.value)
+          print("************",sender.value)
+          
+          if Int(sender.value) == 1 {
+              fontSizeChangeHandler?(13)
+          } else if Int(sender.value) == 2 {
+              fontSizeChangeHandler?(15)
+          } else if Int(sender.value) == 3 {
+              fontSizeChangeHandler?(17)
+          } else if Int(sender.value) == 4 {
+              fontSizeChangeHandler?(18)
+          } else {
+              fontSizeChangeHandler?(20)
+          }
       }
       
       // Change the size accordingly

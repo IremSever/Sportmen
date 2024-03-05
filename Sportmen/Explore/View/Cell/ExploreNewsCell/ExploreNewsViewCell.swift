@@ -8,6 +8,7 @@
 import UIKit
 
 class ExploreNewsViewCell: UITableViewCell {
+    static let identifier = "ExploreNewsViewCell"
     @IBOutlet weak var imgExploreNewsCell: UIImageView!
     @IBOutlet weak var titleExploreNewsCell: UILabel!
     @IBOutlet weak var publishedDateExploreNewsCell: UILabel!

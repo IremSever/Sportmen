@@ -25,9 +25,9 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     func createExploreCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.40, height: UIScreen.main.bounds.width * 0.55)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.width * 0.7)
         layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 15
         
         collectionViewTop5 = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionViewTop5.register(Top5CollectionViewCell.self, forCellWithReuseIdentifier: Top5CollectionViewCell.identifierTop5)
@@ -54,7 +54,7 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Top5CollectionViewCell.identifierTop5, for: indexPath) as? Top5CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .clear
+        cell.backgroundColor = .systemGreen
         let exploreData = exploreDataArray[indexPath.item]
         cell.configure(with: exploreData)
         return cell
