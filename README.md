@@ -13,8 +13,8 @@ Stay informed about the latest developments in the sports world with expert anal
 ### Discover
 Find the most important news discussed by sports fans, social media events, and the most read articles all in one place.
 
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 13 12](https://github.com/IremSever/Sportmen/assets/99093113/47431b3a-9496-4bb0-922c-913e0d70958c) width="50" height="100"  **News**
-![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 13 42](https://github.com/IremSever/Sportmen/assets/99093113/2365d9a5-c3b5-4fad-bbf6-e2642de6d07c) width="200" height="150" **Details-News**
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 13 12](https://github.com/IremSever/Sportmen/assets/99093113/47431b3a-9496-4bb0-922c-913e0d70958c?size=100) **News**
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 13 42](https://github.com/IremSever/Sportmen/assets/99093113/2365d9a5-c3b5-4fad-bbf6-e2642de6d07c?size=100) **Details-News**
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 13 53](https://github.com/IremSever/Sportmen/assets/99093113/ed25e0d4-3328-4442-b137-d7cd23940fb9) width="200" height="150"  **Videos**
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 15 11](https://github.com/IremSever/Sportmen/assets/99093113/5163a4ec-9a38-42a2-879f-2c6f0f4b52ec) width="200" height="150"  **DEtails-Videos**
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-03-05 at 16 15 17](https://github.com/IremSever/Sportmen/assets/99093113/0bed1909-6e9b-416a-bb56-4af3b38462b5) width="200" height="150"  **Play Video**
