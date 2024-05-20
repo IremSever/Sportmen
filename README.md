@@ -10,3 +10,12 @@ Stay informed about the latest developments in the sports world with expert anal
 
 ### Discover
 Find the most important news discussed by sports fans, social media events, and the most read articles all in one place.
+
+
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/86056ae2-5345-4a3f-925b-82dfb0f9a977" alt="sportmennews" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/d4bcd3ce-b706-45d7-b41f-80f9dc69a9ed" alt="sportmennewsdetail" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/11b6d9ba-b88b-4d6e-9408-103584d500af" alt="sportmenvideospng" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/2ec661f4-0b8c-4a3b-8bc9-3b75fb70c0b7" alt="sportmenvideosdetail" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/a46e64d1-0255-4bc8-98e0-adffaa7bdb47" alt="sportmensettingfonts" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/8635c95b-a303-4b63-91f3-5fbe139f3341" alt="sportmendarkmode" width="250"/>
+
