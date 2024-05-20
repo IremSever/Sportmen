@@ -20,6 +20,7 @@ class PopularTopicsTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
                                  .systemGray,
                                  .magenta, .brown]
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createPopularTopicsCollectionView()
@@ -27,9 +28,11 @@ class PopularTopicsTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        
     }
     
     func createPopularTopicsCollectionView() {
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 20

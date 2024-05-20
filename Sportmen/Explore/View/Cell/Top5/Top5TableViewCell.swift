@@ -16,6 +16,7 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createExploreCollectionView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +55,6 @@ class Top5TableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Top5CollectionViewCell.identifierTop5, for: indexPath) as? Top5CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .systemGreen
         let exploreData = exploreDataArray[indexPath.item]
         cell.configure(with: exploreData)
         return cell
