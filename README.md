@@ -17,5 +17,5 @@ Find the most important news discussed by sports fans, social media events, and 
 <img src="https://github.com/IremSever/Sportmen/assets/99093113/11b6d9ba-b88b-4d6e-9408-103584d500af" alt="sportmenvideospng" width="250"/>
 <img src="https://github.com/IremSever/Sportmen/assets/99093113/2ec661f4-0b8c-4a3b-8bc9-3b75fb70c0b7" alt="sportmenvideosdetail" width="250"/>
 <img src="https://github.com/IremSever/Sportmen/assets/99093113/a46e64d1-0255-4bc8-98e0-adffaa7bdb47" alt="sportmensettingfonts" width="250"/>
-<img src="https://github.com/IremSever/Sportmen/assets/99093113/8635c95b-a303-4b63-91f3-5fbe139f3341" alt="sportmendarkmode" width="250"/>
+<img src="https://github.com/IremSever/Sportmen/assets/99093113/0ba79ff0-96cc-4f20-b404-978230d09e3e" alt="sportmendarkmode" width="250"/>
 
