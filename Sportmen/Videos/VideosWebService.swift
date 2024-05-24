@@ -8,7 +8,7 @@
 import Foundation
 class VideosWebservice {
     func getVideosData(completion: @escaping (Result<Videos, Error>) -> Void) {
-        let videosURL = "https://api.tmgrup.com.tr/v1/link/988"
+        let videosURL = "https://....."
         guard let url = URL(string: videosURL) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

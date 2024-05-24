@@ -9,7 +9,7 @@ import Foundation
 
 class ExploreWebservice {
     func getExploreData(completion: @escaping (Result<Explore, Error>) -> Void) {
-        let newsURL = "https://api.tmgrup.com.tr/aggregator/contents?pagetype=0&app=2"
+        let newsURL = "https://....."
         guard let url = URL(string: newsURL) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in

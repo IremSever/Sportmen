@@ -9,7 +9,7 @@ import Foundation
 
 class NewsWebservice {
     func getNewsData(completion: @escaping (Result<News, Error>) -> Void) {
-        let newsURL = "https://api.tmgrup.com.tr/aggregator/contents?pagetype=0&app=2"
+        let newsURL = "https://....."
         guard let url = URL(string: newsURL) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
